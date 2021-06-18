@@ -1,6 +1,4 @@
 import os.path
-from tkinter import Label
-
 from datascience import *
 import tkinter as tk
 
