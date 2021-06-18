@@ -4,13 +4,8 @@ from tkinter import Label
 from datascience import *
 import tkinter as tk
 
-# from tkinter.filedialog import askopenfilename
-
 # global variables for data storage across functions
-# global table_savestate1
-# global table_savestate2
 table_savestate1 = 0
-# table_savestate2 = 0
 
 # data analysis functions
 def lead_count(inputfile):  # sample filepath: 'C:/Users/phili/Downloads/hubspot_qundo_20210526.csv'
@@ -18,39 +13,14 @@ def lead_count(inputfile):  # sample filepath: 'C:/Users/phili/Downloads/hubspot
     # hubspot_org = inputfile
     # get table with rows 'Name', 'Lead Status', 'industry' out of Hubspot .csv file
     csv1 = hubspot_org.select('Name', 'Lead Status', 'Industry').group('Lead Status').sort(1, descending=True)
-    """#old version history
-    #create new table with lead status counts
-    tanalysis_leads = Table(make_array('Lead Status', 'Count'))
-    cold = make_array('Cold', csv1.where('Lead Status', 'Cold').num_rows)
-    warm = make_array('Warm', csv1.where('Lead Status', 'Warm').num_rows)
-    contact_initiation = make_array('Contact Initiation', csv1.where('Lead Status', 'Contact Initiation').num_rows)
-    qualified_lead = make_array('Qualified Lead', csv1.where('Lead Status', 'Qualified Lead').num_rows)
-    follow_up = make_array('Follow-Up', csv1.where('Lead Status', 'Follow-up').num_rows)
-    contract = make_array('Contract', csv1.where('Lead Status', 'Contract').num_rows)
-    rejected = make_array('Rejected', csv1.where('Lead Status', 'Rejected').num_rows)
-    tanalysis_dataset_leads = tanalysis_leads.with_row(cold).with_row(warm).with_row(contact_initiation).with_row(qualified_lead).with_row(follow_up).with_row(contract).with_row(rejected)"""
-    return csv1  # tanalysis_dataset_leads
+    return csv1
 
 def industry_count(inputfile):
     hubspot_org = Table.read_table(inputfile)
     # hubspot_org = inputfile
     # get table with rows 'Name', 'Lead Status', 'industry' out of Hubspot .csv file
     csv1 = hubspot_org.select('Name', 'Lead Status', 'Industry').group('Industry').sort(1, descending=True)
-    # create new table with industry counts
-    """#old version history
-    tanalysis_industry = Table(make_array('Industry', 'Count'))
-    telecommunications = make_array('Telecommunications', csv1.where('Industry', 'Telecommunications').num_rows)
-    mobility = make_array('Mobility', csv1.where('Industry', 'Mobility').num_rows)
-    insurance = make_array('Insurance', csv1.where('Industry', 'Insurance').num_rows)
-    ecommerce = make_array('eCommerce', csv1.where('Industry', 'eCommerce').num_rows)
-    financial = make_array('Financial Services', csv1.where('Industry', 'Financial Services').num_rows)
-    broker = make_array('Online Broker', csv1.where('Industry', 'Online Broker').num_rows)
-    government = make_array('Government', csv1.where('Industry', 'Government Relations').num_rows)
-    travel = make_array('Travel', csv1.where('Industry', 'Travel').num_rows)
-    health = make_array('Health', csv1.where('Industry', 'Health').num_rows)
-    education = make_array('Education', csv1.where('Industry', 'Education').num_rows)
-    tanalysis_dataset_industries = tanalysis_industry.with_row(insurance).with_row(financial).with_row(mobility).with_row(ecommerce).with_row(broker).with_row(telecommunications).with_row(government).with_row(travel).with_row(health).with_row(education)"""
-    return csv1  # tanalysis_dataset_industries #in future version return command needed?: Could just run function & use global variable to print in start_counts...
+    return csv1
 
 def get_topleads(inputfile):
     global table_savestate1
@@ -260,20 +230,6 @@ def check_files():
         textbox.insert('1.0', '\n')
         textbox.insert('1.0', '--------------------------------------------------------------------------------')
         textbox.insert('1.0', '\n')
-
-"""def openfile(): #integrate system dialog for opening files into the program
-    #Open a file for editing
-    filepath = askopenfilename(filetypes=[("Data Files", "*.csv"), ("All Files", "*.*")])
-    if not filepath:
-        return
-    textbox.delete("1.0", tk.END)
-    with open(filepath, "r") as input_file:
-        global inputfile
-        inputfile = input_file.read()
-        table1 = inputfile.select('Name','Lead Status', 'Industry')
-        textbox.insert(tk.END, table1)
-    window.title(f"Hubspot Data Tool - {filepath}")
-"""
 
 # GUI
 window = tk.Tk()
