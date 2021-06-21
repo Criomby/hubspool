@@ -4,7 +4,9 @@
 ## Download Info: <br>
 <h3> Ready-to-use version: <br>
 The latest release can be found on the right, under 'Releases'. <br>
-Download the .exe and execute it as an administrator. </h3>
+Download the .exe and execute it as an administrator. </h3> <br>
+Your antivirus might flag the program, when trying to open it for the first time. <br>
+Be reassured: It's open source and safe for you and your data!
 
 The .exe will be updated on demand, so always check the latest release version before downloading. <br>
 The .py scripts will always be on their latest version.
