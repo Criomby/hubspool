@@ -25,7 +25,7 @@ Go to your targetfile > open properties > details > copy the folder path + add t
 <strong>The file is not saved when I press 'Safe to .csv':</strong><br>
 You have probably forgotten to change the name for the next savefile after your last safe.<br>
 Since the program does not override existing fles, it just does nothing.<br>
-In the next verion an error messge will be printed for that error. Currently there is no error message shown. <br>
+In the next verion an error messge will be printed for that error.<br>
 <br>
 The .exe will be updated on demand, so always check the latest release version before downloading. <br>
 The .py scripts will always be on their latest version. <br>
