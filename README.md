@@ -3,6 +3,7 @@
 
 ### Info: <br>
 If you just want to use the tool as is: Download the .exe and execute it as an administrator. <br>
+The latest releases can be found on the right, under 'Releases'. 
 
 
 
