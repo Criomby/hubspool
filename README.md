@@ -9,4 +9,8 @@ The latest release can be found on the right, under 'Releases'. </h3>
 The .exe will be updated on demand, so always check the latest release version before downloading. <br>
 The .py scripts will always be on their latest version.
 
+## Documentation: <br>
+TBD
+
+<br>
 © 2021 Braum
