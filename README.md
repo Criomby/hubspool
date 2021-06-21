@@ -12,7 +12,7 @@ The .py scripts will always be on their latest version.
 ## Documentation: <br>
 <img width="496" alt="Hubspool_v2.0_interface" src="https://user-images.githubusercontent.com/86114549/122787954-23b6de80-d2b6-11eb-996d-21d86767fd15.png">
 1. Open a .csv datafile: tbd <br>
-2. Click 'Check files' (the printout will indicate, whether the files can be accessed). <br>
+2. Click 'Check files' (the printout will indicate, whether the files are found). <br>
 3. Print desired function (grey buttons). <br>
 4. Save printout via 'Save' to the specified path above. <br>
 5. Repeat. <br>
