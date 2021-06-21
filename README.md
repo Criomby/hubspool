@@ -27,6 +27,15 @@ You have probably forgotten to change the name for the next savefile after your 
 Since the program does not override existing fles, it just does nothing.<br>
 In the next verion an error messge will be printed for that error.<br>
 <br>
+<strong>The wrong table is printed when I press 'save to':</strong><br>
+The program always saves the last function you have printed / pressed. <br>
+Make sure the right button is pressed & shown on top before you save.<br>
+<br>
+<strong>There is only one table printed when I press 'save to':</strong><br>
+Currently the program only saves the last function / table you have pressed. <br>
+If you want to save multiple functions, you have to press the button, save it and repeat with each other function.<br>
+The ability to save multiple tables at once will be included in a future version. <br>
+<br>
 The .exe will be updated on demand, so always check the latest release version before downloading. <br>
 The .py scripts will always be on their latest version. <br>
 <br>
