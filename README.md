@@ -6,7 +6,7 @@
 The latest release can be found on the right, under 'Releases'. <br>
 Download the .exe and execute it as an administrator. </h3> <br>
 Your antivirus might flag the program when trying to open it for the first time. <br>
-Be reassured: It's open source and safe for you and your data! <br>
+<strong>Be reassured: It's open source and safe for you and your data!</strong><br>
 
 ## Documentation: <br>
 <img width="496" alt="Hubspool_v2.0_interface" src="https://user-images.githubusercontent.com/86114549/122787954-23b6de80-d2b6-11eb-996d-21d86767fd15.png">
@@ -18,9 +18,6 @@ Be reassured: It's open source and safe for you and your data! <br>
 (Print a metric and save, print the next metric and save. <br>
 Be sure to change the name for the save file above for each metric you save).<br>
 <br>
-The .exe will be updated on demand, so always check the latest release version before downloading. <br>
-The .py scripts will always be on their latest version. <br>
-<br>
 <h2>Support:</h2><br>
 <strong>I don't know where to find my filepath:</strong><br>
 Go to your targetfile > open properties > details > copy the folder path + add the name of your file to the end of it + .csv. <br>
@@ -29,5 +26,8 @@ Go to your targetfile > open properties > details > copy the folder path + add t
 You have probably forgotten to change the name for the next savefile after your last safe.<br>
 Since the program does not override existing fles, it just does nothing.
 In the next verion an error messge will be printed for that error. Currently there is no error message shown. <br>
+<br>
+The .exe will be updated on demand, so always check the latest release version before downloading. <br>
+The .py scripts will always be on their latest version. <br>
 <br>
 © 2021 Braum
