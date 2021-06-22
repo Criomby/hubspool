@@ -44,9 +44,10 @@ The .py scripts will always be on their latest version. <br>
 
 <h2>Donations:</h2><br>
 <p float='left'>
-<img src="https://user-images.githubusercontent.com/86114549/122907348-5236c700-d353-11eb-87e0-4b73d1834060.png" alt="tether-usdt-logo" height="50">
+<img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" height="50">
+<img src="https://user-images.githubusercontent.com/86114549/122967139-7235ad00-d38a-11eb-86e9-b6e634a5fc75.png" alt="ETH-logo-round" height="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908250-35e75a00-d354-11eb-8be1-243fcecc93c6.png" alt="dai-large" height="50">
-<img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" height="50"><img src="https://user-images.githubusercontent.com/86114549/122966465-a8266180-d389-11eb-9d80-4355b3c6683c.jpg" alt="ether-logo" height="50">
+<img src="https://user-images.githubusercontent.com/86114549/122907348-5236c700-d353-11eb-87e0-4b73d1834060.png" alt="tether-usdt-logo" height="50">
 </p>
 Wallet adress:<br> 
 0xfC56bfc44E5671fD689331490D8e6Fa5B121474F<br>
