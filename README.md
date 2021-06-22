@@ -19,6 +19,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 (Print a metric and save, print the next metric and save. <br>
 Be sure to change the name for the save file above for each metric you save).<br>
 <br>
+
 <h2>Support:</h2><br>
 <strong>I don't know where to find my filepath:</strong><br>
 Go to your targetfile > open properties > details > copy the folder path + add the name of your file to the end of it + .csv. <br>
@@ -40,4 +41,11 @@ The ability to save multiple tables at once will be included in a future version
 The .exe will be updated on demand, so always check the latest release version before downloading. <br>
 The .py scripts will always be on their latest version. <br>
 <br>
+
+<h2>Donations:</h2><br>
+If you use the tool, I'd be happy about a small donation to support development. <br>
+![tether-usdt-logo](https://user-images.githubusercontent.com/86114549/122907348-5236c700-d353-11eb-87e0-4b73d1834060.png)
+
+
+
 © 2021 Braum
