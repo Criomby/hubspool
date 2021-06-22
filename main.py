@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 from functions import *
 
-# move all functions to functions.py & kep main.py as GUI only w/ functions separately -> can/does it work?
 # button functions
 def delete_text():
     textbox.delete('1.0', tk.END)
@@ -160,7 +159,7 @@ def check_files():
 
 # GUI
 window = tk.Tk()
-window.title('Hub Data Tool')
+window.title('Hubspool')
 window.geometry('660x700')
 window.resizable(False, True)
 # window.rowconfigure([0,1])
@@ -189,16 +188,18 @@ label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
 label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
 label_space4 = tk.Label(text='', width=30, height=0, master=frame_a)
 #label3 = tk.Label(text='Output:', width=30, height=2, master=frame_c)
-label4 = tk.Label(text='Copyright (c) 2021 Braum                                                                        ',
+label4 = tk.Label(text='Copyright 2021 Braum                                                                            ',
+                  width=50, height=1, master=frame_0)
+label5 = tk.Label(text='                                                                            Version: 2.0',
                   width=50, height=1, master=frame_0)
 #label_empt = tk.Label(text='', width=40, height=1, master=frame_0)
 # define entries
 entry_filepath_open = tk.Entry(width=80, master=frame_a)
-entry_filepath_open.insert(0, 'C:/Users/phili/Downloads/hubspot-crm-exports-all-companies-2021-06-17.csv')
+entry_filepath_open.insert(0, 'C:/Users/*name*/Downloads/data.csv')
 entry_filepath_open_cont = tk.Entry(width=80, master=frame_a)
-entry_filepath_open_cont.insert(0, 'C:/Users/phili/Downloads/hubspot-crm-exports-all-contacts-2021-06-17.csv')
+entry_filepath_open_cont.insert(0, 'C:/Users/*name*/Downloads/data2.csv')
 entry_filepath_save = tk.Entry(width=80, master=frame_a)
-entry_filepath_save.insert(0, 'C:/Users/phili/Downloads/hubspot_analysis_OUTPUT_1.csv')
+entry_filepath_save.insert(0, 'C:/Users/*name*/Downloads/output.csv')
 # define textbox
 textbox = tk.Text(width=100, height=200, master=frame_d)
 # define buttons
@@ -219,7 +220,8 @@ button_check = tk.Button(text='Check files', width=15, height=2, bg='alice blue'
                          master=frame_buttons1)
 
 # PACKS
-label4.pack()
+label4.pack(side=tk.LEFT)
+label5.pack(side=tk.RIGHT)
 #label_empt.pack(side=tk.RIGHT)
 #label_space_top.pack()
 label_open_comp.pack()
