@@ -9,7 +9,8 @@ Your antivirus might flag the program when trying to open it for the first time.
 <strong>Be reassured: It's open source and safe for you and your data!</strong><br>
 
 ## Documentation: <br>
-<img width="496" alt="Hubspool_v2.0_interface" src="https://user-images.githubusercontent.com/86114549/122787954-23b6de80-d2b6-11eb-996d-21d86767fd15.png">
+![Screenshot 2021-06-22 ](https://user-images.githubusercontent.com/86114549/122900118-b43ffe00-d34c-11eb-98b3-fccd141ef383.png)<br>
+<br>
 <strong>1.</strong> Open a .csv datafile: Enter filepath to your .csv file in the top textfield(s). <br>
 <strong>2.</strong> Click 'Check files' (the printout will indicate, whether the files are found). <br>
 <strong>3.</strong> Print desired function (grey buttons). <br>
@@ -25,11 +26,11 @@ Go to your targetfile > open properties > details > copy the folder path + add t
 <strong>The file is not saved when I press 'Safe to .csv':</strong><br>
 You have probably forgotten to change the name for the next savefile after your last safe.<br>
 Since the program does not override existing fles, it just does nothing.<br>
-In the next verion an error messge will be printed for that error.<br>
+In the next version an error messge will be printed for that error.<br>
 <br>
-<strong>The wrong table is printed when I press 'save to':</strong><br>
+<strong>The wrong table is exported when I press 'save to':</strong><br>
 The program always saves the last function you have printed / pressed. <br>
-Make sure the right button is pressed & shown on top before you save.<br>
+Make sure the right table is shown in the textfield on top before you save.<br>
 <br>
 <strong>There is only one table printed when I press 'save to':</strong><br>
 Currently the program only saves the last function / table you have pressed. <br>
