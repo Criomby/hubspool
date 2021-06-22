@@ -45,13 +45,13 @@ The .py scripts will always be on their latest version. <br>
 <h2>Donations:</h2><br>
 If you use the tool, I'd be happy about a small donation to support development. <br>
 <br>
+Wallet adress: 0xfC56bfc44E5671fD689331490D8e6Fa5B121474F<br>
+<img width="116" alt="ether_wallet_qr_code" src="https://user-images.githubusercontent.com/86114549/122909208-3f24f680-d355-11eb-88b9-c49afb867a98.png">
 <p float='left'>
 <img src="https://user-images.githubusercontent.com/86114549/122907348-5236c700-d353-11eb-87e0-4b73d1834060.png" alt="tether-usdt-logo" width="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908250-35e75a00-d354-11eb-8be1-243fcecc93c6.png" alt="dai-large" width="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" width="50">
 </p>
-Wallet adress: 0xfC56bfc44E5671fD689331490D8e6Fa5B121474F<br>
-<img width="116" alt="ether_wallet_qr_code" src="https://user-images.githubusercontent.com/86114549/122909208-3f24f680-d355-11eb-88b9-c49afb867a98.png">
 Supported currencies: ETH, USDT, USDC, DAI <br>
 <br>
 © 2021 Braum
