@@ -10,13 +10,11 @@ def lead_count(inputfile): #sort according to size
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size() #.sort(1, descending=True)
     return csv1.to_frame()
-#print(lead_count('C:/Users/phili/Downloads/hubspot-crm-exports-all-companies-2021-06-18.csv'))
 
 def industry_count(inputfile): #sort according to size
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Industry').size()
     return csv1.to_frame()
-#print(industry_count('C:/Users/phili/Downloads/hubspot-crm-exports-all-companies-2021-06-18.csv'))
 
 def get_topleads(inputfile):
     global table_savestate1
@@ -27,7 +25,6 @@ def get_topleads(inputfile):
     tanalysis_topleads = tanalysis_topleads_qualified.append(csv1[csv1['Lead Status'] == 'Contract'])
     table_savestate1 = tanalysis_topleads
     return tanalysis_topleads
-#print(get_topleads('C:/Users/phili/Downloads/hubspot-crm-exports-all-companies-2021-06-18.csv'))
 
 def printall_org_table(inputfile):
     global table_savestate1
@@ -35,7 +32,6 @@ def printall_org_table(inputfile):
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Create Date']] # sort date descending? -> usually not necessary bc. already done by HubSpot on export
     table_savestate1 = csv1
     return csv1
-#print(printall_org_table('C:/Users/phili/Downloads/hubspot-crm-exports-all-companies-2021-06-18.csv'))
 
 # // not yet translated into pandas //
 """
@@ -68,7 +64,7 @@ def leadsbyindustry(inputfile): #create 'for' loop to avoid redundancy
         make_array('Other', '')).append(nan)
     table_savestate1 = total
     return insurance #total"""
-#print(leadsbyindustry('C:/Users/phili/Downloads/hubspot-crm-exports-all-companies-2021-06-18.csv'))
+
 # // not yet translated into pandas //
 """def join_contacts(companies, contacts):
     global table_savestate1
