@@ -9,7 +9,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <strong>Be reassured: It's open source and safe for you and your data!</strong><br>
 
 ## Documentation: <br>
-<img src="https://user-images.githubusercontent.com/86114549/122900118-b43ffe00-d34c-11eb-98b3-fccd141ef383.png" alt="Screenshot 2021-06-22 " width="650">
+<img src="https://user-images.githubusercontent.com/86114549/123169716-ee5aee00-d479-11eb-8fb1-cc90e99c0be4.png" alt="Hubspool_v2.2.0_screenshot_printall" height="650">
 <br>
 <strong>1.</strong> Open a .csv datafile: Enter filepath to your .csv file in the top textfield(s). <br>
 <strong>2.</strong> Click 'Check files' (the printout will indicate, whether the files are found). <br>
