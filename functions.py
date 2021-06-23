@@ -2,35 +2,28 @@ import os.path
 import numpy as np
 import pandas as pd
 
-# global variables for data storage across functions
-table_savestate1 = 0
-
 # data analysis functions
 def lead_count(inputfile): #sort according to size
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size() #.sort(1, descending=True)
-    return csv1.to_frame()
+    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size().to_frame().reset_index() #.sort(1, descending=True)
+    return csv1.rename(columns={'Lead Status': 'Description',0: 'Count'})
 
 def industry_count(inputfile): #sort according to size
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Industry').size()
-    return csv1.to_frame()
+    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Industry').size().to_frame().reset_index()
+    return csv1.rename(columns={'Industry': 'Description',0: 'Count'})
 
 def get_topleads(inputfile):
-    global table_savestate1
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Company owner']]
     tanalysis_topleads_followup = csv1[csv1['Lead Status'] == 'Follow-up']
     tanalysis_topleads_qualified = tanalysis_topleads_followup.append(csv1[csv1['Lead Status'] == 'Qualified Lead'])
     tanalysis_topleads = tanalysis_topleads_qualified.append(csv1[csv1['Lead Status'] == 'Contract'])
-    table_savestate1 = tanalysis_topleads
     return tanalysis_topleads
 
 def printall_org_table(inputfile):
-    global table_savestate1
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Create Date']] # sort date descending? -> usually not necessary bc. already done by HubSpot at export
-    table_savestate1 = csv1
+    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Create Date']] # sort date descending? -> usually not necessary bc. already done by HubSpot on export
     return csv1
 
 def leadsbyindustry(inputfile): #create 'for' loop to make function smaller
