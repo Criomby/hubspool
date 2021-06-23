@@ -41,15 +41,15 @@ The ability to save multiple tables at once will be included in a future version
 
 <h2>Donations:</h2><br>
 <p float='left'>
-<img src="https://user-images.githubusercontent.com/86114549/122967139-7235ad00-d38a-11eb-86e9-b6e634a5fc75.png" alt="ETH-logo-round" height="50">
 <img src="https://user-images.githubusercontent.com/86114549/123052110-be243880-d402-11eb-9f0b-77df24874278.png" alt="tether-usdt-logo" height="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" height="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908250-35e75a00-d354-11eb-8be1-243fcecc93c6.png" alt="dai-large" height="50">
+<img src="https://user-images.githubusercontent.com/86114549/122967139-7235ad00-d38a-11eb-86e9-b6e634a5fc75.png" alt="ETH-logo-round" height="50">
 </p>
 Wallet adress:<br> 
 0xfC56bfc44E5671fD689331490D8e6Fa5B121474F<br>
 <br>
 <img width="116" alt="ether_wallet_qr_code" src="https://user-images.githubusercontent.com/86114549/122909208-3f24f680-d355-11eb-88b9-c49afb867a98.png">
-Supported currencies: ETH, USDT, USDC, DAI <br>
+Supported currencies: USDT, USDC, DAI, ETH <br>
 <br>
 © 2021 Braum
