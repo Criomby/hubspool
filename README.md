@@ -20,6 +20,11 @@ Your antivirus might flag the program when trying to open it for the first time.
 Be sure to change the name for the save file above for each metric you save).<br>
 <br>
 
+## Requirements: <br>
+This program requires a certain set-up of HubSpot features to work as intended. <br>
+This is nothing to worry about, it's a one-time and quick setup process and will ensure the proper function of your analysis.<br>
+**TBD** <br>
+
 <h2>Support:</h2><br>
 <strong>I don't know where to find my filepath:</strong><br>
 Go to your targetfile > open properties > details > copy the folder path + add the name of your file to the end of it + .csv. <br>
