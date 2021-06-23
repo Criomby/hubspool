@@ -45,7 +45,7 @@ The .py scripts will always be on their latest version. <br>
 <h2>Donations:</h2><br>
 <p float='left'>
 <img src="https://user-images.githubusercontent.com/86114549/122967139-7235ad00-d38a-11eb-86e9-b6e634a5fc75.png" alt="ETH-logo-round" height="50">
-<img src="https://user-images.githubusercontent.com/86114549/122981900-8a152d00-d39a-11eb-8e93-1dbf36aed4d9.jpg" alt="tether-usdt-logo" height="50">
+<img src="https://user-images.githubusercontent.com/86114549/123052110-be243880-d402-11eb-9f0b-77df24874278.png" alt="tether-usdt-logo" height="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" height="50">
 <img src="https://user-images.githubusercontent.com/86114549/122908250-35e75a00-d354-11eb-8be1-243fcecc93c6.png" alt="dai-large" height="50">
 </p>
