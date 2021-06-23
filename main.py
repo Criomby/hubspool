@@ -4,6 +4,9 @@ import numpy as np
 import pandas as pd
 from functions import *
 
+# global variables for data storage across functions
+table_savestate1 = pd.DataFrame()
+
 # button functions
 def delete_text():
     textbox.delete('1.0', tk.END)
@@ -12,10 +15,12 @@ def start_counts():
     global table_savestate1
     x = entry_filepath_open.get()
     if os.path.isfile(x):
-        result_lead = lead_count(x)#.relabel(0, 'Description')
-        result_industries = industry_count(x)#.relabel(0, 'Description')
-        df0 = pd.DataFrame([[''] * len(result_lead.columns)], columns=result_lead.columns) # has zeroes in weird places (see leadsbyindustry for solution), add titles 'Leads' & 'Industries' respectively
-        total = result_lead.append(df0).append(result_industries)
+        result_lead = lead_count(x)
+        result_industries = industry_count(x)
+        df0 = pd.DataFrame([['', '']], columns=result_lead.columns)
+        df1 = pd.DataFrame([['Lead', '']], columns=df0.columns)
+        df2 = pd.DataFrame([['Industry', '']], columns=df0.columns)
+        total = df1.append(result_lead).append(df0).append(df2).append(result_industries)
         table_savestate1 = total
         textbox.insert('1.0', total)
         textbox.insert('1.0', '\n')
@@ -28,9 +33,11 @@ def start_counts():
         textbox.insert('1.0', '\n')
 
 def start_topleads():
+    global table_savestate1
     x = entry_filepath_open.get()
     if os.path.isfile(x):
         result = get_topleads(x)
+        table_savestate1 = result
         # textbox.insert('1.0', 'Our top leads are:')
         textbox.insert('1.0', result)
         textbox.insert('1.0', '\n')
@@ -59,8 +66,7 @@ def printall_button():
 def save():
     global table_savestate1
     s = entry_filepath_save.get()
-    """ # feature for error cases
-    if table_savestate1 == 0:
+    if table_savestate1.empty == True:
         textbox.insert('1.0', 'Print something first. The button saves the last table you have printed.')
         textbox.insert('1.0', '\n')
         textbox.insert('1.0', '--------------------------------------------------------------------------------')
@@ -76,19 +82,14 @@ def save():
         textbox.insert('1.0', '\n')
         textbox.insert('1.0', '--------------------------------------------------------------------------------')
         textbox.insert('1.0', '\n')
-        table_savestate1 = 0
-    """
-    table_savestate1.to_csv(s)
-    textbox.insert('1.0', 'File created!')
-    textbox.insert('1.0', '\n')
-    textbox.insert('1.0', '--------------------------------------------------------------------------------')
-    textbox.insert('1.0', '\n')
-    table_savestate1 = 0
+        table_savestate1 = pd.DataFrame()
 
 def start_leadsbyindustry():
+    global table_savestate1
     x = entry_filepath_open.get()
     if os.path.isfile(x):
         result = leadsbyindustry(x)
+        table_savestate1 = result
         textbox.insert('1.0', result)
         textbox.insert('1.0', '\n')
         textbox.insert('1.0', '--------------------------------------------------------------------------------')
@@ -164,8 +165,10 @@ window = tk.Tk()
 window.title('Hubspool')
 window.geometry('660x700')
 window.resizable(False, True)
+# window.rowconfigure([0,1])
+# window.columnconfigure([0,1])
 # DEFINITIONS
-# frames for basic layout
+# basic layout
 frame_0 = tk.Frame()
 frame_0.pack(side='top', anchor='nw')
 frame_a = tk.Frame()
@@ -190,8 +193,9 @@ label_space4 = tk.Label(text='', width=30, height=0, master=frame_a)
 #label3 = tk.Label(text='Output:', width=30, height=2, master=frame_c)
 label4 = tk.Label(text='Copyright 2021 Braum                                                                            ',
                   width=50, height=1, master=frame_0)
-label5 = tk.Label(text='                                                                            Version: 2.1',
+label5 = tk.Label(text='                                                                            Version: 2.1.2',
                   width=50, height=1, master=frame_0)
+#label_empt = tk.Label(text='', width=40, height=1, master=frame_0)
 # define entries
 entry_filepath_open = tk.Entry(width=80, master=frame_a)
 entry_filepath_open.insert(0, 'C:/Users/name/Downloads/data.csv')
@@ -240,8 +244,10 @@ button_safe.grid(row=1, column=3)
 button_leadsbyindustry.grid(row=0, column=2)
 button_join.grid(row=1, column=2)
 button_check.grid(row=0, column=0)
+
 button_delete.grid(row=0, column=3)
 label_space2.pack()
+
 #label3.pack()
 textbox.pack()
 
