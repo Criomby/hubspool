@@ -19,7 +19,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 (Print a metric and save, print the next metric and save. <br>
 Be sure to change the name for the save file above for each metric you save).<br>
 <br>
-<h3>Functions overview:</h3><br>
+<h3>Functions overview:</h3>
 Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as .csv file / table.<br>
 <br>
 <strong>Check files:</strong><br>
