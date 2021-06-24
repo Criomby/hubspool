@@ -1,4 +1,4 @@
-import os.path
+# import os.path (not needed in functions)
 import numpy as np
 import pandas as pd
 
@@ -73,6 +73,13 @@ def leadsbyindustry(inputfile): #create 'for' loop to make function smaller
         df9).append(government).append(df0).append(df10).append(nan).rename(columns={0: 'Count'})
     table_savestate1 = total
     return total
+
+def pitches(inputfile):
+    global table_savestate1
+    hubspot_org = pd.read_csv(inputfile)
+    csv1 = hubspot_org[['Name', 'Pitch']].dropna(thresh=1)
+    filtered_csv1 = csv1[csv1['Pitch'].notnull()]
+    return filtered_csv1
 
 # // not yet translated into pandas //
 """def join_contacts(companies, contacts):
