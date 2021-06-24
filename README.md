@@ -19,6 +19,26 @@ Your antivirus might flag the program when trying to open it for the first time.
 (Print a metric and save, print the next metric and save. <br>
 Be sure to change the name for the save file above for each metric you save).<br>
 <br>
+<h3>Functions overview:</h3><br>
+Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as .csv file / table.<br>
+<br>
+<strong>Check files:</strong><br>
+Checks if the data (companies) file under the specified path can be found and accessed.<br>
+<strong>Print all:</strong><br>
+Prints out the top and bottom rows, to see if the file is correct.<br>
+<strong>Counts:</strong><br>
+1. Counts the all different lead categorie and number of entries in them.<br>
+2. Counts all industries and number of entries in them.<br>
+<strong>Topleads:</strong><br>
+Counts the compnaies in the top 3 lead categories, closest to a deal: 'Follow-up', 'Qualified Lead' & 'Contract'<br>
+<strong>Leads by industries:</strong><br>
+Counts the industries and the different lead status in them and ho many companies in each industry belong to each lead status respectively.<br>
+<strong>Pitches:</strong><br>
+Prints a table of each company that has a pitch scheduled and the data within the pitch information entry.<br>
+<strong>Delete:</strong><br>
+Deletes all output in the text box.<br>
+<strong>Save:</strong><br>
+Saves the last printed function which is seen in the text box as .csv to the save path specified above.<br>
 
 ## Requirements: <br>
 This program requires a certain set-up of HubSpot features to work as intended. <br>
