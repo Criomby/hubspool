@@ -45,7 +45,7 @@ The program gets every industry and lead status from HubSpot without any changes
 However, some functions can perform additional analyses through changes to the HubSpot data structure / setup.<br>
 The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
 Additionally, with the following lead status & industry categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
-(If you use different categories, they will still be shown and analyzed, but sorted by size and not custom sorted)<br>
+<strong>(If you use different categories, they will still be shown and analyzed, but sorted by size and not custom sorted)</strong><br>
 - Cold
 - Cold Contacted
 - Warm
