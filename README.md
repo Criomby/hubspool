@@ -40,10 +40,38 @@ Deletes all output in the text box.<br>
 <strong>Save:</strong><br>
 Saves the last printed function which is seen in the text box as .csv to the save path specified above.<br>
 
-## Requirements: <br>
-This program requires a certain set-up of HubSpot features to work as intended. <br>
-This is nothing to worry about, it's a one-time and quick setup process and will ensure the proper function of your analysis.<br>
-**TBD** <br>
+## Recommendations: <br>
+The program gets every industry and lead status from HubSpot without any changes to the initial setup required. <br>
+However, some functions can perform additional analyses through changes to the HubSpot data structure / setup.<br>
+The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
+Additionally, with the following lead status & industry categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
+(If you use different categories, they will still be shown and analyzed, but sorted by size and not custom sorted)<br>
+- Cold
+- Cold Contacted
+- Warm
+- Follow-up
+- Qualified Lead
+- Contract
+- Rejected
+<br>
+<ul>
+<li>Insurance</li>
+<li>Financial Services</li>
+<li>Mobility</li>
+<li>Health</li>
+<li>Telecommunications</li>
+<li>eCommerce</li>
+<li>Online Broker</li>
+<li>Education</li>
+<li>Government</li>
+</ul>
+<br>
+Of course you are free to change the categories for custom sort in the source code should you require different ones.<br>
+For the function 'Pitches', a company information entry has to be set up in HubSpot, where the pitch information is inserted with the following structure:<br>
+<br>
+<em>(Closed / Open) date, time, location</em><br>
+(again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
+<br>
 
 <h2>Support:</h2><br>
 <strong>I don't know where to find my filepath:</strong><br>
