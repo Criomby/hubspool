@@ -1,17 +1,37 @@
-# import os.path (not needed in functions)
 import numpy as np
 import pandas as pd
+from pandas.api.types import CategoricalDtype
 
 # data analysis functions
-def lead_count(inputfile): #sort according to size
+def lead_count(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size().to_frame().reset_index() #.sort(1, descending=True)
-    return csv1.rename(columns={'Lead Status': 'Description',0: 'Count'})
+    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size().to_frame().reset_index()
+    csv1 = csv1.rename(columns={'Lead Status': 'Description', 0: 'Count'})
+    leads_disordered = csv1.sort_values(by='Count', ascending=False)
+    #categories: Cold, Cold Contacted, Warm, Follow-up, Qualified Lead, Contract, Rejected
+    """ # inefficient method for large datasets to sort, but does not require an additional module to be imported
+    df_mapping = pd.DataFrame({'size': ['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected']})
+    sort_mapping = df_mapping.reset_index().set_index('size')
+    csv2['size_num'] = csv2['Description'].map(sort_mapping['index'])
+    result = csv2.sort_values(by='size_num')"""
+    lead_cat_order = CategoricalDtype(['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected'],
+                                      ordered=True)
+    csv1['Description'] = csv1['Description'].astype(lead_cat_order)
+    leads_inorder = csv1.sort_values('Description')
+    return leads_disordered, leads_inorder
 
-def industry_count(inputfile): #sort according to size
+def industry_count(inputfile):
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Industry').size().to_frame().reset_index()
-    return csv1.rename(columns={'Industry': 'Description',0: 'Count'})
+    csv1 = csv1.rename(columns={'Industry': 'Description',0: 'Count'})
+    cats_disordered = csv1.sort_values(by='Count', ascending=False)
+    # categories: Insurance, Financial Services, Mobility, Health, Telecommunications, eCommerce, Online Broker, Education, Government (, nan)
+    industry_cat_order = CategoricalDtype(
+        ['Insurance', 'Financial Services', 'Mobility', 'Health', 'Telecommunications', 'eCommerce', 'Online Broker', 'Education', 'Government'],
+        ordered=True)
+    csv1['Description'] = csv1['Description'].astype(industry_cat_order)
+    cats_inorder = csv1.sort_values('Description')
+    return cats_disordered, cats_inorder
 
 def get_topleads(inputfile):
     hubspot_org = pd.read_csv(inputfile)
@@ -23,27 +43,13 @@ def get_topleads(inputfile):
 
 def printall_org_table(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Create Date']] # sort date descending? -> usually not necessary bc. already done by HubSpot on export
+    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Create Date']]
     return csv1
 
-def leadsbyindustry(inputfile): #create 'for' loop to make function smaller
+def leadsbyindustry(inputfile):
     global table_savestate1
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Lead Status', 'Industry']]
-    """
-    # test for function and get it right (decreased code size (speed?))
-    CATEGORIES = ['Insurance', 'Financial Services', 'Mobility', 'Health', 'Telecommunications', 'eCommerce',
-                  'Online Broker', 'Education',
-                  'Banking', 'Government', 'nan']
-    VARIABLES = [insurance, finance, mobility, health, telecomm, ecommerce, broker, edu, banking, government, nan]
-    for i in VARIABLES:
-        i = csv1[csv1['Industry'] == i].groupby('Lead Status').size().to_frame()
-        df1 = pd.DataFrame([['i', '']], columns=i.columns)
-        total = df1.append(finance).append(df1).append(insurance).append(df1).append(mobility).append(df1).append(
-            health).append(df1).append(telecomm).append(df1).append(ecommerce).append(
-            df1).append(broker).append(df1).append(edu).append(df1).append(banking).append(df1).append(government).append(
-            df1).append(nan)
-    """
     insurance = csv1[csv1['Industry'] == 'Insurance'].groupby('Lead Status').size().to_frame().reset_index()
     finance = csv1[csv1['Industry'] == 'Financial Services'].groupby('Lead Status').size().to_frame().reset_index()
     mobility = csv1[csv1['Industry'] == 'Mobility'].groupby('Lead Status').size().to_frame().reset_index()
@@ -56,7 +62,7 @@ def leadsbyindustry(inputfile): #create 'for' loop to make function smaller
     government = csv1[csv1['Industry'] == 'Government'].groupby('Lead Status').size().to_frame().reset_index()
     nan = csv1[csv1['Industry'] == 'nan'].groupby('Lead Status').size().to_frame().reset_index()
     df0 = pd.DataFrame([['', '']], columns=insurance.columns)
-    df1 = pd.DataFrame([['Insurance', '']], columns=insurance.columns) # add 'for' function for each category in 'Industries' respectively
+    df1 = pd.DataFrame([['Insurance', '']], columns=insurance.columns)
     df2 = pd.DataFrame([['Financial Services', '']], columns=insurance.columns)
     df3 = pd.DataFrame([['Mobility', '']], columns=insurance.columns)
     df4 = pd.DataFrame([['Health', '']], columns=insurance.columns)
@@ -64,7 +70,6 @@ def leadsbyindustry(inputfile): #create 'for' loop to make function smaller
     df6 = pd.DataFrame([['eCommerce', '']], columns=insurance.columns)
     df7 = pd.DataFrame([['Online Broker', '']], columns=insurance.columns)
     df8 = pd.DataFrame([['Education', '']], columns=insurance.columns)
-    #df8 = pd.DataFrame([['Banking', '']], columns=insurance.columns) # depreciated
     df9 = pd.DataFrame([['Government', '']], columns=insurance.columns)
     df10 = pd.DataFrame([['NaN', '']], columns=insurance.columns)
     total = df1.append(insurance).append(df0).append(df2).append(finance).append(df0).append(df3).append(mobility).append(
@@ -77,19 +82,7 @@ def leadsbyindustry(inputfile): #create 'for' loop to make function smaller
 def pitches(inputfile):
     global table_savestate1
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Pitch']].dropna(thresh=1)
+    csv1 = hubspot_org[['Name', 'Pitch']]
     filtered_csv1 = csv1[csv1['Pitch'].notnull()]
-    return filtered_csv1
-
-# // not yet translated into pandas //
-"""def join_contacts(companies, contacts):
-    global table_savestate1
-    hubspot_comp = pd.read_csv(companies)
-    hubspot_pers = pd.read_csv(contacts)
-    # joint = hubspot_pers.join(hubspot_comp, 'Company ID')
-    total = hubspot_comp.join('Company ID', hubspot_pers, 'Associated Company ID').select('Name', 'First Name',
-                                                                                          'Last Name', 'Job Title',
-                                                                                          'Lead Status', 'Industry',
-                                                                                          'Number of times contacted')
-    table_savestate1 = total
-    return total"""
+    result = filtered_csv1.sort_values(by='Pitch')
+    return result
