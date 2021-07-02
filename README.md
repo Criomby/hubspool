@@ -22,30 +22,33 @@ Be sure to change the name for the save file above for each metric you save).<br
 <h3>Functions overview:</h3>
 Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as .csv file / table.<br>
 <br>
-<strong>Check files:</strong><br>
-Checks if the data (companies) file under the specified path can be found and accessed.<br>
-<strong>Print all:</strong><br>
-Prints out the top and bottom rows, to see if the file is correct.<br>
-<strong>Counts:</strong><br>
-1. Counts the all different lead categorie and number of entries in them.<br>
+<ul>
+<li><strong>Check files:</strong><br>
+  Checks if the data (companies) file under the specified path can be found and accessed.<br></li>
+<li><strong>Print all:</strong><br>
+Prints out the top and bottom rows, to see if the file is correct.<br</li>
+<li><strong>Counts:</strong><br>
+1. Counts the all different lead categorie and number of entries in them.<br></li>
 2. Counts all industries and number of entries in them.<br>
-<strong>Topleads:</strong><br>
-Counts the compnaies in the top 3 lead categories, closest to a deal: 'Follow-up', 'Qualified Lead' & 'Contract'<br>
-<strong>Leads by industries:</strong><br>
-Counts the industries and the different lead status in them and ho many companies in each industry belong to each lead status respectively.<br>
-<strong>Pitches:</strong><br>
-Prints a table of each company that has a pitch scheduled and the data within the pitch information entry.<br>
-<strong>Delete:</strong><br>
-Deletes all output in the text box.<br>
-<strong>Save:</strong><br>
-Saves the last printed function which is seen in the text box as .csv to the save path specified above.<br>
+<li><strong>Topleads:</strong><br>
+Counts the compnaies in the top 3 lead categories, closest to a deal: 'Follow-up', 'Qualified Lead' & 'Contract'<br></li>
+<li><strong>Leads by industries:</strong><br>
+Counts the industries and the different lead status in them and ho many companies in each industry belong to each lead status respectively.<br></li>
+<li><strong>Pitches:</strong><br>
+Prints a table of each company that has a pitch scheduled and the data within the pitch information entry.<br></li>
+<li><strong>Delete:</strong><br>
+Deletes all output in the text box.<br></li>
+<li><strong>Save:</strong><br>
+Saves the last printed function which is seen in the text box as .csv to the save path specified above.<br></li>
+</ul>
 
 ## Recommendations: <br>
 The program gets every industry and lead status from HubSpot without any changes to the initial setup required. <br>
 However, some functions can perform additional analyses through changes to the HubSpot data structure / setup.<br>
 The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
 Additionally, with the following lead status & industry categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
-<strong>(If you use different categories, they will still be shown and analyzed, but sorted by size and not custom sorted)</strong><br>
+<br>
+<strong>(If you use different categories, they will still be shown and analyzed, but sorted by size and not custom sorted as shown below)</strong><br>
 - Cold
 - Cold Contacted
 - Warm
