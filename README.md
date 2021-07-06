@@ -27,14 +27,15 @@ Each function prints out a table of the specified information below, which is di
 <br>
 <ul>
 <li><strong>Open file:</strong><br>
-Open a .csv file exported from HubSpot.<br></li>
+Open a .csv file exported from HubSpot.<br>
+The imported file has to be in the .csv format.</li>
 <li><strong>Save to Excel:</strong><br>
-Saves the last printed function which is seen in the text box as Excel (.xlsx) file to the specified path.<br></li>
+Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br></li>
 <li><strong>Delete:</strong><br>
 Deletes all output within the text box.<br></li>
 <br>
 <li><strong>ALL:</strong><br>
-Executes every analysis and saves them into one Excel file with each in a separate worksheet.<br>
+Executes every analysis and saves them into one Excel file in a separate worksheet, each respectively.<br>
 The new file is saved in the same path as the original file with '_Hubspool' at the end.<br> 
 <br>
 <li><strong>Print all:</strong><br>
