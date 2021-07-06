@@ -2,11 +2,12 @@
 #### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics, operated via a simple GUI. 
 
 ## Download Info: <br>
-<h3> Ready-to-use version (Windows only): <br>
+<h3> Ready-to-use version (Windows only):</h3><br>
 The latest release can be found on the right, under 'Releases'. <br>
-Download the .exe and execute it as an administrator. </h3> <br>
-Your antivirus might flag the program when trying to open it for the first time. <br>
-<strong><h4>- Be reassured: It's open source and safe for you and your data! -</h4></strong><br>
+Download the .exe and execute it as an administrator.<br>
+<br>
+Your antivirus might flag the program when trying to open it for the first time.
+<h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 ## Documentation: <br>
 <img src="https://user-images.githubusercontent.com/86114549/124588954-b54b5200-de59-11eb-9aed-63bdae6f2f3e.png" alt="Hubspool_v2.2.0_screenshot_printall" height="650">
@@ -16,7 +17,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <strong>3.</strong> Save the result via 'Save'. <br>
 <strong>4.</strong> Repeat fore required functions. <br>
 <br>
-<strong>Alternatively:</strong> Press 'ALL' to execute all analyses at once (more info on that below).<br>
+<strong>Alternatively:</strong> Press 'ALL' to execute all analyses at once.<br>
 <br>
 <strong>If you want to have all analyses at once and within one file, press 'ALL'.</strong><br>
 All metrics will be taken and exported into one Excel file within different sheets, each named accordingly.<br>
