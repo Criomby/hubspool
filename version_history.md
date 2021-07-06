@@ -13,3 +13,7 @@ A table with all lead status' categories sorted by size, a table with all indust
 and a joint table with the leads and industries joined together and sorted in a custom order for export,<br>
 Industries not included in the custom order are displayed as 'NaN' and can be viewed in the disordered table below if needed;<br>
 code cleaned from depreciated rows and annotations.<br>
+<strong>2.3.0</strong> Implemented system file dialog to open & save files (replaces the text label file path input);<br>
+'ALL' function implemented: executes every function and saves the table in an Excel file in a separate sheet in it named respectively,<br>
+the newly generated file is called after the imported file with '_Hubspool' added the filename and saved at the same path;<br>
+the 'delete' butoon now not only deletes the output in the textbox, but also resets the savestate.<br>
