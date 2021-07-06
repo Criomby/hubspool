@@ -87,7 +87,7 @@ For the function 'Pitches', a company information entry has to be set up in HubS
 (again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
 <br>
 
-<h2>Support:</h2><br>
+<h2>FAQ:</h2><br>
 <strong>I don't know where to find the generated file with 'ALL':</strong><br>
 The file is saved under the same path as the .csv data file, with the same name, but '_Hubspool' added to the end of the filename.<br>
 <br>
@@ -100,12 +100,16 @@ If you want to have all analyses in one Excel file at once, press 'ALL'.<br>
 Otherwise, the program saves the last function / table you have pressed.<br>
 <br>
 
-<h2>Donations:</h2><br>
+<h2>Support the project:</h2><br>
 <p float='left'>
-<img src="https://user-images.githubusercontent.com/86114549/123052110-be243880-d402-11eb-9f0b-77df24874278.png" alt="tether-usdt-logo" height="50">
-<img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" height="50">
-<img src="https://user-images.githubusercontent.com/86114549/122908250-35e75a00-d354-11eb-8be1-243fcecc93c6.png" alt="dai-large" height="50">
-<img src="https://user-images.githubusercontent.com/86114549/122967139-7235ad00-d38a-11eb-86e9-b6e634a5fc75.png" alt="ETH-logo-round" height="50">
+<a href='https://ethereum.org/en/stablecoins/#explore'>
+<img src="https://user-images.githubusercontent.com/86114549/123052110-be243880-d402-11eb-9f0b-77df24874278.png" alt="tether-usdt-logo" height="50"></a>
+<a href='https://ethereum.org/en/stablecoins/#explore'>
+<img src="https://user-images.githubusercontent.com/86114549/122908329-4a2b5700-d354-11eb-8ba9-4fa8d2c76ed6.png" alt="usdc-large" height="50"></a>
+<a href='https://ethereum.org/en/stablecoins/#explore'>
+<img src="https://user-images.githubusercontent.com/86114549/122908250-35e75a00-d354-11eb-8be1-243fcecc93c6.png" alt="dai-large" height="50"></a>
+<a href='https://ethereum.org/en/stablecoins/#explore'>
+<img src="https://user-images.githubusercontent.com/86114549/122967139-7235ad00-d38a-11eb-86e9-b6e634a5fc75.png" alt="ETH-logo-round" height="50"></a>
 </p>
 Wallet adress:<br> 
 0xfC56bfc44E5671fD689331490D8e6Fa5B121474F<br>
