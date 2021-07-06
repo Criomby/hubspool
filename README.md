@@ -9,24 +9,36 @@ Your antivirus might flag the program when trying to open it for the first time.
 <strong>Be reassured: It's open source and safe for you and your data!</strong><br>
 
 ## Documentation: <br>
-<img src="https://user-images.githubusercontent.com/86114549/123169716-ee5aee00-d479-11eb-8fb1-cc90e99c0be4.png" alt="Hubspool_v2.2.0_screenshot_printall" height="650">
+<img src="https://user-images.githubusercontent.com/86114549/124588954-b54b5200-de59-11eb-9aed-63bdae6f2f3e.png" alt="Hubspool_v2.2.0_screenshot_printall" height="650">
 <br>
-<strong>1.</strong> Open a .csv datafile: Enter filepath to your .csv file in the top textfield(s). <br>
-<strong>2.</strong> Click 'Check files' (the printout will indicate, whether the files are found). <br>
-<strong>3.</strong> Print desired function (grey buttons). <br>
-<strong>4.</strong> Save printout via 'Save' to the specified path in the textfield above. <br>
-<strong>5.</strong> Repeat. <br>
-(Print a metric and save, print the next metric and save. <br>
-Be sure to change the name for the save file above for each metric you save).<br>
+<strong>1.</strong> Press 'Open' and select the .csv data file you want to analyse. <br>
+<strong>2.</strong> Press the desired function (grey buttons).<br>
+<strong>3.</strong> Save the result via 'Save'. <br>
+<strong>4.</strong> Repeat fore required functions. <br>
+<br>
+<strong>Alternatively:</strong> Press 'ALL' to execute all analyses at once (more info on that below).<br>
+<br>
+<strong>If you want to have all analyses at once and within one file, press 'ALL'.</strong><br>
+All metrics will be taken and exported into one Excel file within different sheets, each named accordingly.<br>
+The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
 <br>
 <h3>Functions overview:</h3>
-Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as .csv file / table.<br>
+Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as an Excel file / sheet.<br>
 <br>
 <ul>
-<li><strong>Check files:</strong><br>
-  Checks if the data (companies) file under the specified path can be found and accessed.<br></li>
+<li><strong>Open file:</strong><br>
+Open a .csv file exported from HubSpot.<br></li>
+<li><strong>Save to Excel:</strong><br>
+Saves the last printed function which is seen in the text box as Excel (.xlsx) file to the specified path.<br></li>
+<li><strong>Delete:</strong><br>
+Deletes all output within the text box.<br></li>
+<br>
+<li><strong>ALL:</strong><br>
+Executes every analysis and saves them into one Excel file with each in a separate worksheet.<br>
+The new file is saved in the same path as the original file with '_Hubspool' at the end.<br> 
+<br>
 <li><strong>Print all:</strong><br>
-Prints out the top and bottom rows, to see if the file is correct.<br</li>
+Prints out the first 5 top and bottom rows, to see if the file is correct.<br</li>
 <li><strong>Counts:</strong><br>
 1. Counts the all different lead categorie and number of entries in them.<br></li>
 2. Counts all industries and number of entries in them.<br>
@@ -36,11 +48,8 @@ Counts the compnaies in the top 3 lead categories, closest to a deal: 'Follow-up
 Counts the industries and the different lead status in them and ho many companies in each industry belong to each lead status respectively.<br></li>
 <li><strong>Pitches:</strong><br>
 Prints a table of each company that has a pitch scheduled and the data within the pitch information entry.<br></li>
-<li><strong>Delete:</strong><br>
-Deletes all output in the text box.<br></li>
-<li><strong>Save:</strong><br>
-Saves the last printed function which is seen in the text box as .csv to the save path specified above.<br></li>
 </ul>
+
 
 ## Recommendations: <br>
 The program gets every industry and lead status from HubSpot without any changes to the initial setup required. <br>
@@ -77,22 +86,16 @@ For the function 'Pitches', a company information entry has to be set up in HubS
 <br>
 
 <h2>Support:</h2><br>
-<strong>I don't know where to find my filepath:</strong><br>
-Go to your targetfile > open properties > details > copy the folder path + add the name of your file to the end of it + .csv. <br>
+<strong>I don't know where to find the generated file with 'ALL':</strong><br>
+The file is saved under the same path as the .csv data file, with the same name, but '_Hubspool' added to the end of the filename.<br>
 <br>
-<strong>The file is not saved when I press 'Safe to .csv':</strong><br>
-You have probably forgotten to change the name for the next savefile after your last safe.<br>
-Since the program does not override existing fles, it prints an error message, stating that the file already exists.<br>
-In that case you have two options: 1. Define a new save path / name for your new file, or 2. delete the existing file.<br>
-<br>
-<strong>The wrong table is exported when I press 'save to':</strong><br>
+<strong>The wrong table is exported when I press 'Save to Excel':</strong><br>
 The program always saves the last function you have printed / pressed. <br>
-Make sure the right table is shown in the textfield on top before you save.<br>
+Make sure the right table is shown in the textfield before you save.<br>
 <br>
-<strong>There is only one table printed when I press 'save to':</strong><br>
-Currently the program only saves the last function / table you have pressed. <br>
-If you want to save multiple functions, you have to press the button, save it and repeat with each other function.<br>
-The ability to save multiple tables at once will be included in a future version. <br>
+<strong>There is only one table saved when I press 'Save to Excel':</strong><br>
+If you want to have all analyses in one Excel file at once, press 'ALL'.<br>
+Otherwise, the program saves the last function / table you have pressed.<br>
 <br>
 
 <h2>Donations:</h2><br>
