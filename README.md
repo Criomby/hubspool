@@ -2,11 +2,11 @@
 #### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics, operated via a simple GUI. 
 
 ## Download Info: <br>
-<h3> Ready-to-use version: <br>
+<h3> Ready-to-use version (Windows only): <br>
 The latest release can be found on the right, under 'Releases'. <br>
 Download the .exe and execute it as an administrator. </h3> <br>
 Your antivirus might flag the program when trying to open it for the first time. <br>
-<strong>Be reassured: It's open source and safe for you and your data!</strong><br>
+<strong><h4>- Be reassured: It's open source and safe for you and your data! -</h4></strong><br>
 
 ## Documentation: <br>
 <img src="https://user-images.githubusercontent.com/86114549/124588954-b54b5200-de59-11eb-9aed-63bdae6f2f3e.png" alt="Hubspool_v2.2.0_screenshot_printall" height="650">
