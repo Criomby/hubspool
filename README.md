@@ -83,7 +83,7 @@ Additionally, with the following lead status & industry categories configured in
 Of course you are free to change the categories for custom sort in the source code should you require different ones.<br>
 For the function 'Pitches', a company information entry has to be set up in HubSpot, where the pitch information is inserted with the following structure:<br>
 <br>
-<em>(Closed / Open) date, time, location</em><br>
+<em>(Closed / Open) YY.MM.DD, time, location</em><br>
 (again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
 <br>
 
