@@ -17,7 +17,7 @@ code cleaned from depreciated rows and annotations.<br>
 'ALL' function implemented: executes every function and saves the table in an Excel file in a separate sheet in it named respectively,<br>
 the newly generated file is called after the imported file with '_Hubspool' added the filename and saved at the same path;<br>
 the 'delete' butoon now not only deletes the output in the textbox, but also resets the savestate.<br>
-<strong>2.4.0</strong> Drastically reduced filesize of the executable from 250mb to 30mb;<br>
+<strong>2.4.0</strong> Drastically reduced filesize of the executable from ~250mb to ~30mb;<br>
 textbox output optimized (separation rows above and below every printout + no empty first line),<br>
 also code for textbox output optimized for easier human reading;<br>
 'ALL' function checks for existing file before running;<br>
