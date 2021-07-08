@@ -9,8 +9,10 @@ Download the .exe and execute it as an administrator.<br>
 Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
-## Documentation: <br>
-<img src="https://user-images.githubusercontent.com/86114549/124588954-b54b5200-de59-11eb-9aed-63bdae6f2f3e.png" alt="Hubspool_v2.2.0_screenshot_printall" height="650">
+## Documentation:
+<img src="https://user-images.githubusercontent.com/86114549/124940206-0e59e800-e00a-11eb-8075-759264c221d9.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
+(Example when executing 'Counts' function)
+<br>
 <br>
 <strong>1.</strong> Press 'Open' and select the .csv data file you want to analyse. <br>
 <strong>2.</strong> Press the desired function (grey buttons).<br>
@@ -38,6 +40,8 @@ Deletes all output within the text box.<br></li>
 <li><strong>ALL:</strong><br>
 Executes every analysis and saves them into one Excel file in a separate worksheet, each respectively.<br>
 The new file is saved in the same path as the original file with '_Hubspool' at the end.<br> 
+<img src="https://user-images.githubusercontent.com/86114549/124940320-2af62000-e00a-11eb-823d-e8d06f101b4e.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
+<br>
 <br>
 <li><strong>Print all:</strong><br>
 Prints out the first 5 top and bottom rows, to see if the file is correct.<br</li>
