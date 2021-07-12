@@ -3,7 +3,7 @@
 
 ## Download Info: <br>
 <h3> Ready-to-use version (Windows only):</h3><br>
-The latest release can be found on the right, under 'Releases'. <br>
+The latest release can be found on the right under 'Releases'. <br>
 Download the .exe and execute it as an administrator.<br>
 <br>
 Your antivirus might flag the program when trying to open it for the first time.
@@ -15,13 +15,15 @@ ________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
 <ul>
 <li><strong>Open file:</strong><br>
-Select your HubSpot export .csv file.<br>
+Select your HubSpot exported .csv file.<br>
 <li><strong>'ALL':</strong><br>
-Press 'ALL', and you'll have an Excel file with all analyses next to your source file within one second.<br>
+Press 'ALL' and you'll have an Excel file with all analyses next to your source file within one second.<br>
 </ul>
 <br>
 <strong>-> Enjoy!</strong><br>
-_______________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________<br>
+<br>
+(See below for detailed descriptions)<br>
 <br>
 <br>
 
@@ -105,16 +107,9 @@ For the function 'Pitches', a company information entry has to be set up in HubS
 <br>
 
 <h2>FAQ:</h2><br>
-<strong>I don't know where to find the generated file with 'ALL':</strong><br>
-The file is saved under the same path as the .csv data file, with the same name, but '_Hubspool' added to the end of the filename.<br>
+For questions or other inquiries message me at:<br>
 <br>
-<strong>The wrong table is exported when I press 'Save to Excel':</strong><br>
-The program always saves the last function you have printed / pressed. <br>
-Make sure the right table is shown in the textfield before you save.<br>
-<br>
-<strong>There is only one table saved when I press 'Save to Excel':</strong><br>
-If you want to have all analyses in one Excel file at once, press 'ALL'.<br>
-Otherwise, the program saves the last function / table you have pressed.<br>
+<strong>criomby@pm.me</strong><br>
 <br>
 
 <h2>Support the project:</h2><br>
