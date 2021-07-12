@@ -9,24 +9,35 @@ Download the .exe and execute it as an administrator.<br>
 Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
-## Documentation:
+## Getting started:
 <img src="https://user-images.githubusercontent.com/86114549/124940206-0e59e800-e00a-11eb-8075-759264c221d9.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
-(Example when executing 'Counts' function)
+_______________________________________________________________________________________________________________
+<strong><h3>The easiest & quickest way:</h3></strong><br>
+<ul>
+<li><strong>Open file:</strong><br>
+Select your HubSpot export .csv file.<br>
+<li><strong>'ALL':</strong><br>
+Press 'ALL', and you'll have an Excel file with all analyses next to your source file within one second.<br>
+</ul>
+<br>
+<strong>-> Enjoy!</strong><br>
+_______________________________________________________________________________________________________________
 <br>
 <br>
-<strong>1.</strong> Press 'Open' and select the .csv data file you want to analyse. <br>
-<strong>2.</strong> Press the desired function (grey buttons).<br>
-<strong>3.</strong> Save the result via 'Save'. <br>
-<strong>4.</strong> Repeat fore required functions. <br>
-<br>
-<strong>Alternatively:</strong> Press 'ALL' to execute all analyses at once.<br>
-<br>
-<strong>If you want to have all analyses at once and within one file, press 'ALL'.</strong><br>
-All metrics will be taken and exported into one Excel file within different sheets, each named accordingly.<br>
-The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
-<br>
-<h3>Functions overview:</h3>
+
+## Functions overview:
 Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as an Excel file / sheet.<br>
+<br>
+
+> <strong>General workflow:</strong><br>
+> 
+> <strong>1.</strong> Press 'Open' and select the .csv data file you want to analyse. <br>
+> <strong>2.</strong> Press the desired function (grey buttons).<br>
+> <strong>3.</strong> Save the result via 'Save'. <br>
+> <strong>4.</strong> Repeat for required functions. <br>
+> 
+> Steps 3 & 4 not required for 'ALL' function, since it saves automatically.
+
 <br>
 <ul>
 <li><strong>Open file:</strong><br>
@@ -38,9 +49,11 @@ Saves the last printed function which is seen in the text box as Excel (.xlsx) f
 Deletes all output within the text box.<br></li>
 <br>
 <li><strong>ALL:</strong><br>
-Executes every analysis and saves them into one Excel file in a separate worksheet, each respectively.<br>
-The new file is saved in the same path as the original file with '_Hubspool' at the end.<br> 
-<img src="https://user-images.githubusercontent.com/86114549/124940320-2af62000-e00a-11eb-823d-e8d06f101b4e.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
+All metrics are be taken and exported into one Excel file within different sheets, each named accordingly.<br>
+The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
+<img src="https://user-images.githubusercontent.com/86114549/124940320-2af62000-e00a-11eb-823d-e8d06f101b4e.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587"><br>
+The Excel file will contain the worksheets:<br>
+<img width="587" alt="Screenshot 2021-07-12 154608" src="https://user-images.githubusercontent.com/86114549/125298368-59d10680-e328-11eb-99d9-b9a52fc75f4f.png">
 <br>
 <br>
 <li><strong>Print all:</strong><br>
@@ -55,7 +68,7 @@ Counts the industries and the different lead status in them and ho many companie
 <li><strong>Pitches:</strong><br>
 Prints a table of each company that has a pitch scheduled and the data within the pitch information entry.<br></li>
 </ul>
-
+<br>
 
 ## Recommendations: <br>
 The program gets every industry and lead status from HubSpot without any changes to the initial setup required. <br>
@@ -120,5 +133,6 @@ Wallet adress:<br>
 <br>
 <img width="116" alt="ether_wallet_qr_code" src="https://user-images.githubusercontent.com/86114549/122909208-3f24f680-d355-11eb-88b9-c49afb867a98.png">
 Supported currencies: USDT, USDC, DAI, ETH <br>
+<br>
 <br>
 © 2021 Braum
