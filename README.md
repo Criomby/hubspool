@@ -38,7 +38,7 @@ Each function prints out a table of the specified information below, which is di
 > <strong>3.</strong> Save the result via 'Save'. <br>
 > <strong>4.</strong> Repeat for required functions. <br>
 > 
-> Steps 3 & 4 not required for 'ALL' function, since it saves automatically.
+> Steps 3 & 4 not required for 'ALL' function, since it exports all functions automatically.
 
 <br>
 <ul>
