@@ -78,31 +78,40 @@ However, some functions can perform additional analyses through changes to the H
 The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
 Additionally, with the following lead status & industry categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
 <br>
-<strong>(If you use different categories, they will still be shown and analyzed, but sorted by size and not custom sorted as shown below)</strong><br>
-- Cold
-- Cold Contacted
-- Warm
-- Follow-up
-- Qualified Lead
-- Contract
-- Rejected
+<strong>(If you use different categories, they will still be analyzed, but sorted by size and not custom sorted as shown below)</strong><br>
+
 <br>
+<strong>Industries:</strong>
 <ul>
-<li>Insurance</li>
-<li>Financial Services</li>
-<li>Mobility</li>
-<li>Health</li>
-<li>Telecommunications</li>
-<li>eCommerce</li>
-<li>Online Broker</li>
-<li>Education</li>
-<li>Government</li>
+  <li>Insurance</li>
+  <li>Financial Services</li>
+  <li>Mobility</li>
+  <li>Health</li>
+  <li>Telecommunications</li>
+  <li>eCommerce</li>
+  <li>Online Broker</li>
+  <li>Education</li>
+  <li>Government</li>
+</ul>
+<br>
+<strong>Lead status:</strong>
+<ul>
+  <li>Cold</li>
+  <li>Cold Contacted</li>
+  <li>Warm</li>
+  <li>Follow-up</li>
+  <li>Qualified Lead</li>
+  <li>Contract</li>
+  <li>Rejected</li>
 </ul>
 <br>
 Of course you are free to change the categories for custom sort in the source code should you require different ones.<br>
+<br>
 For the function 'Pitches', a company information entry has to be set up in HubSpot, where the pitch information is inserted with the following structure:<br>
 <br>
-<em>(Closed / Open) YY.MM.DD, time, location</em><br>
+
+> (Closed / Open) YYYY.MM.DD, time, location
+
 (again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
 <br>
 
