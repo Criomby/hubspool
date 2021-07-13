@@ -1,5 +1,6 @@
 # Hubspool
-#### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics, operated via a simple GUI. 
+#### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics via a simple GUI.
+<br>
 
 ## Download Info: <br>
 <h3> Ready-to-use version (Windows only):</h3><br>
