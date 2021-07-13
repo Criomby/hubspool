@@ -11,6 +11,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 
 ## Getting started:
 <img src="https://user-images.githubusercontent.com/86114549/124940206-0e59e800-e00a-11eb-8075-759264c221d9.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
+<br>
 _______________________________________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
 <ul>
@@ -24,6 +25,7 @@ Press 'ALL' and you'll have an Excel file with all analyses next to your source 
 _______________________________________________________________________________________________________________<br>
 <br>
 (See below for detailed descriptions)<br>
+<br>
 <br>
 <br>
 
@@ -73,7 +75,8 @@ Prints a table of each company that has a pitch scheduled and the data within th
 <br>
 
 ## Recommendations: <br>
-The program gets every industry and lead status from HubSpot without any changes to the initial setup required. <br>
+The program gets every industry and lead status from HubSpot without any changes to the initial setup required.<br>
+<br>
 However, some functions can perform additional analyses through changes to the HubSpot data structure / setup.<br>
 The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
 Additionally, with the following lead status & industry categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
