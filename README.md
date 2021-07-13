@@ -119,7 +119,7 @@ For the function 'Pitches', a company information entry has to be set up in HubS
 <br>
 
 <h2>FAQ:</h2><br>
-For questions or other inquiries message me at:<br>
+Regarding questions or other inquiries message me at:<br>
 <br>
 <strong>criomby@pm.me</strong><br>
 <br>
