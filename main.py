@@ -1,10 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog as fd
 import os.path
-import numpy as np
-import pandas as pd
 from functions import *
-import openpyxl
 
 # global variables for data storage across functions
 table_savestate1 = pd.DataFrame()
@@ -216,11 +213,14 @@ def exex_all():
         textbox.insert('end', '\n')
         textbox.insert('end', 'Error: File already exists. ')
         textbox.insert('end', '\n')
+        textbox.insert('end', '\n')
         textbox.insert('end', 'Open another file for analysis or delete existing file.')
+        textbox.insert('end', '\n')
         textbox.insert('end', '\n')
         textbox.insert('end', 'Existing file:')
         textbox.insert('end', '\n')
         textbox.insert('end', new_filepath)
+        textbox.insert('end', '\n')
         textbox.insert('end', '\n')
         textbox.insert('end', '--------------------------------------------------------------------------------')
         textbox.insert('end', '\n')
@@ -267,6 +267,7 @@ def exex_all():
         textbox.insert('end', '\n')
         textbox.insert('end', new_filepath[:-5])
         textbox.insert('end', '\n')
+        textbox.insert('end', '\n')
         textbox.insert('end', '--------------------------------------------------------------------------------')
         textbox.insert('end', '\n')
     else:
@@ -301,27 +302,30 @@ label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
 label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
 label4 = tk.Label(text='Copyright 2021 Braum                                                                            ',
                   width=50, height=1, master=frame_0)
-label5 = tk.Label(text='                                                                            Version: 2.4.0',
+label5 = tk.Label(text='                                                                            Version: 2.4.1',
                   width=50, height=1, master=frame_0)
 # define textbox
 textbox = tk.Text(width=100, height=200, master=frame_d)
 # define buttons
-button_counts = tk.Button(text='Counts', width=15, height=2, bg='gray85', command=start_counts, master=frame_buttons1)
-button_topleads = tk.Button(text='Topleads', width=15, height=2, bg='gray85', command=start_topleads,
-                            master=frame_buttons1)
-button_safe = tk.Button(text='Safe to Excel', width=15, height=2, bg='DarkSeaGreen1', command=save_file, master=frame_buttons1)
+button_open = tk.Button(text='Open file', width=15, height=2, bg='LightSkyBlue1', command=select_file,
+                         master=frame_buttons1, relief='flat') #groove
+button_safe = tk.Button(text='Safe to Excel', width=15, height=2, bg='DarkSeaGreen1', command=save_file, master=frame_buttons1,
+                        relief='flat')
 button_delete = tk.Button(text='Delete', width=15, height=2, bg='RosyBrown1', command=delete_text,
-                          master=frame_buttons1)
-button_printall = tk.Button(text='Print all', width=15, height=2, bg='gray85', command=printall_button,
-                            master=frame_buttons1)
-button_leadsbyindustry = tk.Button(text='Leads by industry', width=15, height=2, bg='gray85',
-                                   command=start_leadsbyindustry, master=frame_buttons1)
-button_pitches = tk.Button(text='Pitches', width=15, height=2, command=start_pitches, bg='gray85',
-                        master=frame_buttons1)
-button_open = tk.Button(text='Open file', width=15, height=2, bg='alice blue', command=select_file,
-                         master=frame_buttons1)
-button_all = tk.Button(text='ALL', width=15, height=2, command=exex_all, bg='gray40', fg='white',
-                         master=frame_buttons1)
+                          master=frame_buttons1, relief='flat')
+button_all = tk.Button(text='ALL', width=15, height=2, command=exex_all, bg='gray39', fg='white',
+                         master=frame_buttons1, relief='flat')
+button_printall = tk.Button(text='Print all', width=15, height=2, bg='gray70', command=printall_button,
+                            master=frame_buttons1, relief='flat')
+button_counts = tk.Button(text='Counts', width=15, height=2, bg='gray75', command=start_counts, master=frame_buttons1,
+                          relief='flat')
+button_leadsbyindustry = tk.Button(text='Leads by industry', width=15, height=2, bg='gray80',
+                                   command=start_leadsbyindustry, master=frame_buttons1, relief='flat')
+button_topleads = tk.Button(text='Topleads', width=15, height=2, bg='gray85', command=start_topleads,
+                            master=frame_buttons1, relief='flat')
+button_pitches = tk.Button(text='Pitches', width=15, height=2, command=start_pitches, bg='gray89',
+                        master=frame_buttons1, relief='flat')
+
 # PACKS
 label4.pack(side=tk.LEFT)
 label5.pack(side=tk.RIGHT)
