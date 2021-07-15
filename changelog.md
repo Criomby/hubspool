@@ -23,3 +23,5 @@ also code for textbox output optimized for easier human reading;<br>
 'ALL' function checks for existing file before running;<br>
 new button layout: 'ALL' first button in functions block;<br>
 added new error messages.<br>
+<strong>2.4.1</strong> New minimalistic button design, logical button code order;<br>
+optimized imports (reduced number of imported packages).<br>
