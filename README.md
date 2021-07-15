@@ -50,7 +50,7 @@ Each other function prints the output tables into the text box for manual inspec
 Open a .csv file exported from HubSpot.<br>
 The imported file has to be in the .csv format.</li>
 <br>
-_______________________________________________________________________________________________________________________________________<br>
+_________________________________________________________________________________________________________________________<br>
 <br>
 <li><strong>ALL:</strong><br>
 All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
@@ -67,7 +67,7 @@ The Excel file will contain the worksheets:<br>
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
 > <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
-______________________________________________________________________________________________________________________________________<br>
+_________________________________________________________________________________________________________________________<br>
 <br>
 <li><strong>Save to Excel:</strong><br>
 Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br>
