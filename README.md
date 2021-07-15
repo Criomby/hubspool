@@ -50,6 +50,12 @@ Each other function prints the output tables into the text box for manual inspec
 Open a .csv file exported from HubSpot.<br>
 The imported file has to be in the .csv format.</li>
 <br>
+<li><strong>Save to Excel:</strong><br>
+Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br>
+(not required for 'ALL')</li>
+<li><strong>Delete:</strong><br>
+Deletes all output within the text box.<br></li>
+<br>
 _________________________________________________________________________________________________________________________<br>
 <br>
 <li><strong>ALL:</strong><br>
@@ -68,12 +74,6 @@ The Excel file will contain the worksheets:<br>
 > <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
 _________________________________________________________________________________________________________________________<br>
-<br>
-<li><strong>Save to Excel:</strong><br>
-Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br>
-(not required for 'ALL')</li>
-<li><strong>Delete:</strong><br>
-Deletes all output within the text box.<br></li>
 <br>
 <li><strong>Print all:</strong><br>
 Prints out the first 5 top and bottom rows, to see if the file contains the latest information.<br</li>
