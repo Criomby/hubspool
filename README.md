@@ -11,7 +11,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 ## Getting started:
-<img src="https://user-images.githubusercontent.com/86114549/124940206-0e59e800-e00a-11eb-8075-759264c221d9.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
+<img src="https://user-images.githubusercontent.com/86114549/125851390-37a4cc87-ea4e-4d7a-b2ae-265e97fcda2b.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
 <br>
 _______________________________________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
@@ -61,8 +61,14 @@ ________________________________________________________________________________
 <li><strong>ALL:</strong><br>
 All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
 The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
-<img src="https://user-images.githubusercontent.com/86114549/124940320-2af62000-e00a-11eb-823d-e8d06f101b4e.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587"><br>
-The Excel file will contain the worksheets:<br>
+<br>
+<img src="https://user-images.githubusercontent.com/86114549/125850888-58582498-ffc7-4b33-8967-00a5f4faaf89.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587"><br>
+<br>
+Source folder:
+<br>
+<img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="Hubspool_v2.2.0_screenshot_counts" width="200"><br>
+<br>
+The generated Excel file will contain the worksheets:<br>
 <img width="587" alt="Screenshot 2021-07-12 154608" src="https://user-images.githubusercontent.com/86114549/125298368-59d10680-e328-11eb-99d9-b9a52fc75f4f.png">
 <br>
 <br>
@@ -92,6 +98,7 @@ Prints a table of each company that has a pitch scheduled and the data within th
 
 ## Recommendations: <br>
 The program gets every industry and lead status from HubSpot without any changes to the initial setup required.<br>
+Should you import data from a different tool, read below for the requirements.<br>
 <br>
 However, some functions can perform additional analyses through changes to the HubSpot data structure / setup.<br>
 The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
@@ -140,6 +147,11 @@ If a company / contact person rejects Qundo's offer, the reason for the rejectio
 <strong>Reference contacts:</strong><br>
 Reference contacts are created as contacts under the respective company.<br>
 The lead status "Reference" is then selected under the respective contact.<br>
+<br>
+<strong>Data import requirements for files not from HubSpot:</strong><br>
+The imported data has to be in the .csv file format.<br>
+The file has to contain the following columns:<br>
+Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch.<br>
 <br>
 
 <h2>FAQ:</h2><br>
