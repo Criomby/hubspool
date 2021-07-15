@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 from pandas.api.types import CategoricalDtype
 
@@ -8,12 +7,6 @@ def lead_count(inputfile):
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size().to_frame().reset_index()
     csv1 = csv1.rename(columns={'Lead Status': 'Description', 0: 'Count'})
     leads_disordered = csv1.sort_values(by='Count', ascending=False)
-    #categories: Cold, Cold Contacted, Warm, Follow-up, Qualified Lead, Contract, Rejected
-    """ # inefficient method for large datasets to sort, but does not require an additional module to be imported
-    df_mapping = pd.DataFrame({'size': ['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected']})
-    sort_mapping = df_mapping.reset_index().set_index('size')
-    csv2['size_num'] = csv2['Description'].map(sort_mapping['index'])
-    result = csv2.sort_values(by='size_num')"""
     lead_cat_order = CategoricalDtype(['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected'],
                                       ordered=True)
     csv1['Description'] = csv1['Description'].astype(lead_cat_order)
@@ -25,7 +18,6 @@ def industry_count(inputfile):
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Industry').size().to_frame().reset_index()
     csv1 = csv1.rename(columns={'Industry': 'Description',0: 'Count'})
     cats_disordered = csv1.sort_values(by='Count', ascending=False)
-    # categories: Insurance, Financial Services, Mobility, Health, Telecommunications, eCommerce, Online Broker, Education, Government (, nan)
     industry_cat_order = CategoricalDtype(
         ['Insurance', 'Financial Services', 'Mobility', 'Health', 'Telecommunications', 'eCommerce', 'Online Broker', 'Education', 'Government'],
         ordered=True)
@@ -58,7 +50,6 @@ def leadsbyindustry(inputfile):
     ecommerce = csv1[csv1['Industry'] == 'eCommerce'].groupby('Lead Status').size().to_frame().reset_index()
     broker = csv1[csv1['Industry'] == 'Online Broker'].groupby('Lead Status').size().to_frame().reset_index()
     edu = csv1[csv1['Industry'] == 'Education'].groupby('Lead Status').size().to_frame().reset_index()
-    #banking = csv1[csv1['Industry'] == 'Banking'].groupby('Lead Status').size().to_frame().reset_index() # depreciated
     government = csv1[csv1['Industry'] == 'Government'].groupby('Lead Status').size().to_frame().reset_index()
     nan = csv1[csv1['Industry'] == 'nan'].groupby('Lead Status').size().to_frame().reset_index()
     df0 = pd.DataFrame([['', '']], columns=insurance.columns)
