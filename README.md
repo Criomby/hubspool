@@ -22,7 +22,7 @@ Select your HubSpot exported .csv file.<br>
 Press 'ALL' and you'll have an Excel file with all analyses next to your source file within one second.<br>
 </ul>
 <br>
-<strong>-> Enjoy!</strong><br>
+<strong>-> Done!</strong><br>
 _______________________________________________________________________________________________________________<br>
 <br>
 (See below for detailed descriptions)<br>
@@ -31,7 +31,8 @@ ________________________________________________________________________________
 <br>
 
 ## Functions overview:
-Each function prints out a table of the specified information below, which is displayed in the output text field and can be exported as an Excel file / sheet.<br>
+Usually you won't need any other function but 'ALL'.<br>
+Each other function prints the output tables into the text box for manual inspection and can be exported separately to Excel.<br>
 <br>
 
 > <strong>General workflow:</strong><br>
@@ -48,24 +49,38 @@ Each function prints out a table of the specified information below, which is di
 <li><strong>Open file:</strong><br>
 Open a .csv file exported from HubSpot.<br>
 The imported file has to be in the .csv format.</li>
-<li><strong>Save to Excel:</strong><br>
-Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br></li>
-<li><strong>Delete:</strong><br>
-Deletes all output within the text box.<br></li>
+<br>
+_______________________________________________________________________________________________________________________________________<br>
 <br>
 <li><strong>ALL:</strong><br>
-All metrics are be taken and exported into one Excel file within different sheets, each named accordingly.<br>
+All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
 The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
 <img src="https://user-images.githubusercontent.com/86114549/124940320-2af62000-e00a-11eb-823d-e8d06f101b4e.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587"><br>
 The Excel file will contain the worksheets:<br>
 <img width="587" alt="Screenshot 2021-07-12 154608" src="https://user-images.githubusercontent.com/86114549/125298368-59d10680-e328-11eb-99d9-b9a52fc75f4f.png">
 <br>
 <br>
+  
+> <strong>Counts+Industries:</strong> Leads and predefined industries custom sorted (see below).<br>
+> <strong>Counts_raw:</strong> All lead categories displayed, counted and sorted by size descending.<br>
+> <strong>Industries_raw:</strong> All industries displayed, counted and sorted by size descending.<br>
+> <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
+> <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
+
+______________________________________________________________________________________________________________________________________<br>
+<br>
+<li><strong>Save to Excel:</strong><br>
+Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br>
+(not required for 'ALL')</li>
+<li><strong>Delete:</strong><br>
+Deletes all output within the text box.<br></li>
+<br>
 <li><strong>Print all:</strong><br>
-Prints out the first 5 top and bottom rows, to see if the file is correct.<br</li>
+Prints out the first 5 top and bottom rows, to see if the file contains the latest information.<br</li>
 <li><strong>Counts:</strong><br>
 1. Counts the all different lead categorie and number of entries in them.<br></li>
 2. Counts all industries and number of entries in them.<br>
+3. Puts out an additional custom sorted table with the leads and industries counted as specified by the categories below.<br>
 <li><strong>Topleads:</strong><br>
 Counts the compnaies in the top 3 lead categories, closest to a deal: 'Follow-up', 'Qualified Lead' & 'Contract'<br></li>
 <li><strong>Leads by industries:</strong><br>
@@ -111,12 +126,20 @@ Additionally, with the following lead status & industry categories configured in
 <br>
 Of course you are free to change the categories for custom sort in the source code should you require different ones.<br>
 <br>
+<strong>Pitches:</strong><br>
 For the function 'Pitches', a company information entry has to be set up in HubSpot, where the pitch information is inserted with the following structure:<br>
 <br>
 
 > (Closed / Open) YYYY.MM.DD, time, location
 
 (again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
+<br>
+<strong>Rejection:</strong><br>
+If a company / contact person rejects Qundo's offer, the reason for the rejection must be entered under "Company Information" under "Reason for rejection".<br>
+
+<strong>Reference contacts:</strong><br>
+Reference contacts are created as contacts under the respective company.<br>
+The lead status "Reference" is then selected under the respective contact.<br>
 <br>
 
 <h2>FAQ:</h2><br>
