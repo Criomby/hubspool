@@ -25,4 +25,9 @@ new button layout: 'ALL' first button in functions block;<br>
 added new error messages.<br>
 <strong>2.4.1</strong> New minimalistic button design, logical button code order;<br>
 optimized imports (reduced number of imported packages);<br>
-text message output optimized for error message with spaces and save paths with spaces for better readability.
+text message output optimized for error message with spaces and save paths with spaces for better readability.<br>
+<strong>2.5.0</strong> Charts are generated with each analysis directly in the Excel file sheets,<br>
+types: bar / pie charts;<br>
+Excel column widths are fitted in width to content;<br>
+The redundant indexes from the DataFrames have been removen and are not saved in the Excel anymore,<br>
+they are now numbered from 0 to n when manually exporting to Excel (any function besides 'ALL') where they are still included.<br>
