@@ -232,6 +232,9 @@ def exex_all():
         df1 = pd.DataFrame([['Lead', '']], columns=df0.columns)
         df2 = pd.DataFrame([['Industry', '']], columns=df0.columns)
         total = df1.append(leads_inorder).append(df0).append(df2).append(cats_inorder)
+        total.reset_index(drop=True, inplace=True)
+        leads_disordered.reset_index(drop=True, inplace=True)
+        cats_disordered.reset_index(drop=True, inplace=True)
         table_savestate1 = total
         table_savestate2 = leads_disordered
         table_savestate3 = cats_disordered
@@ -242,28 +245,108 @@ def exex_all():
         textbox.insert('end', 'Counts (raw / size sorted) done.')
         textbox.insert('end', '\n')
         # leads by industry
-        table_savestate4 = leadsbyindustry(x)
+        df_leadsbyindustry = leadsbyindustry(x)
+        df_leadsbyindustry.reset_index(drop=True, inplace=True)
+        table_savestate4 = df_leadsbyindustry
         textbox.insert('end', 'Leads by industry done.')
         textbox.insert('end', '\n')
         # pitches
-        table_savestate5 = pitches(x)
+        df_pitches = pitches(x)
+        df_pitches.reset_index(drop=True, inplace=True)
+        table_savestate5 = df_pitches
         textbox.insert('end', 'Pitches done.')
         textbox.insert('end', '\n')
         # topleads
-        table_savestate6 = get_topleads(x)
+        df_topleads = get_topleads(x)
+        df_topleads.reset_index(drop=True, inplace=True)
+        table_savestate6 = df_topleads
         textbox.insert('end', 'Topleads done.')
         textbox.insert('end', '\n')
         textbox.insert('end', '--------------------------------------------------------------------------------')
         textbox.insert('end', '\n')
         with pd.ExcelWriter(new_filepath) as writer:
-            table_savestate1.to_excel(writer, sheet_name='Counts+Industries')
-            table_savestate2.to_excel(writer, sheet_name='Counts_raw')
-            table_savestate3.to_excel(writer, sheet_name='Industries_raw')
-            table_savestate4.to_excel(writer, sheet_name='Leads_by_industries')
-            table_savestate5.to_excel(writer, sheet_name='Pitches')
-            table_savestate6.to_excel(writer, sheet_name='Topleads')
+            # create Excel
+            table_savestate1.to_excel(writer, sheet_name='Leads+Industries', index=False)
+            table_savestate2.to_excel(writer, sheet_name='Leads_raw', index=False)
+            table_savestate3.to_excel(writer, sheet_name='Industries_raw', index=False)
+            table_savestate4.to_excel(writer, sheet_name='Leads_by_industries', index=False)
+            table_savestate5.to_excel(writer, sheet_name='Pitches', index=False)
+            table_savestate6.to_excel(writer, sheet_name='Topleads', index=False)
+            # create charts
+            # counts leads disordered
+            workbook = writer.book
+            worksheet_leads_raw = writer.sheets['Leads_raw']
+            chart_leads_raw = workbook.add_chart({'type': 'bar'})
+            chart_leads_raw.add_series({
+                'categories': '=Leads_raw!$A$2:$A$8',
+                'values': '=Leads_raw!$B$2:$B$8',
+                'data_labels': {'value': True},
+                'points': [
+                    {'fill': {'color': '#9da7b2'}},
+                    {'fill': {'color': '#5c7f90'}},
+                    {'fill': {'color': '#005778'}},
+                    {'fill': {'color': '#f2a007'}},
+                    {'fill': {'color': '#5b7b63'}},
+                    {'fill': {'color': '#8c0410'}},
+                    {'fill': {'color': '#a55b75'}}
+                ]
+                })
+            worksheet_leads_raw.insert_chart('E1', chart_leads_raw)
+            # counts industries disordered
+            worksheet_industries_raw = writer.sheets['Industries_raw']
+            chart_industries_raw = workbook.add_chart({'type': 'pie'})
+            chart_industries_raw.add_series({
+                'categories': '=Industries_raw!$A$2:$A$13',
+                'values': '=Industries_raw!$B$2:$B$13',
+                'data_labels': {'value': True}
+            })
+            worksheet_industries_raw.insert_chart('E1', chart_industries_raw)
+            # counts inorder charts
+            workbook = writer.book
+            worksheet_counts = writer.sheets['Leads+Industries']
+            chart_leads_inorder = workbook.add_chart({'type': 'column'})
+            chart_leads_inorder.add_series({
+                'categories': '=Leads+Industries!$A$3:$A$9',
+                'values': '=Leads+Industries!$B$3:$B$9',
+                'data_labels': {'value': True},
+                'points': [
+                    {'fill': {'color': '#9da7b2'}},
+                    {'fill': {'color': '#5c7f90'}},
+                    {'fill': {'color': '#005778'}},
+                    {'fill': {'color': '#f2a007'}},
+                    {'fill': {'color': '#5b7b63'}},
+                    {'fill': {'color': '#8c0410'}},
+                    {'fill': {'color': '#a55b75'}}
+                ]
+            })
+            worksheet_counts.insert_chart('E1', chart_leads_inorder)
+            chart_industries_inorder = workbook.add_chart({'type': 'pie'})
+            chart_industries_inorder.add_series({
+                'categories': '=Leads+Industries!$A$12:$A$20',
+                'values': '=Leads+Industries!$B$12:$B$20',
+                'data_labels': {'value': True}
+            })
+            worksheet_counts.insert_chart('E17', chart_industries_inorder)
+            # set column width for Excel sheets
+            worksheet_counts.set_column(0,0,19)
+            worksheet_leads_raw.set_column(0,0,15)
+            worksheet_industries_raw.set_column(0,0,22)
+            worksheet_leadsbyindustries = writer.sheets['Leads_by_industries']
+            worksheet_leadsbyindustries.set_column(0,0,19)
+            worksheet_pitches = writer.sheets['Pitches']
+            worksheet_pitches.set_column(0,0,21)
+            worksheet_pitches.set_column(1,1,39)
+            worksheet_topleads = writer.sheets['Topleads']
+            worksheet_topleads.set_column(0,0,34)
+            worksheet_topleads.set_column(1,1,14)
+            worksheet_topleads.set_column(2,2,18)
+            worksheet_topleads.set_column(3,3,20)
+        textbox.insert('end', 'Charts generated.')
         textbox.insert('end', '\n')
-        textbox.insert('end', 'Excel file generated and saved to:')
+        textbox.insert('end', '--------------------------------------------------------------------------------')
+        textbox.insert('end', '\n')
+        textbox.insert('end', '\n')
+        textbox.insert('end', 'Excel file saved to:')
         textbox.insert('end', '\n')
         textbox.insert('end', new_filepath[:-5])
         textbox.insert('end', '\n')
@@ -302,7 +385,7 @@ label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
 label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
 label4 = tk.Label(text='Copyright 2021 Braum                                                                            ',
                   width=50, height=1, master=frame_0)
-label5 = tk.Label(text='                                                                            Version: 2.4.1',
+label5 = tk.Label(text='                                                                            Version: 2.5.0',
                   width=50, height=1, master=frame_0)
 # define textbox
 textbox = tk.Text(width=100, height=200, master=frame_d)
@@ -315,9 +398,9 @@ button_delete = tk.Button(text='Delete', width=15, height=2, bg='RosyBrown1', co
                           master=frame_buttons1, relief='flat')
 button_all = tk.Button(text='ALL', width=15, height=2, command=exex_all, bg='gray39', fg='white',
                          master=frame_buttons1, relief='flat')
-button_printall = tk.Button(text='Print all', width=15, height=2, bg='gray70', command=printall_button,
+button_printall = tk.Button(text='Print all', width=15, height=2, bg='gray75', command=printall_button,
                             master=frame_buttons1, relief='flat')
-button_counts = tk.Button(text='Counts', width=15, height=2, bg='gray75', command=start_counts, master=frame_buttons1,
+button_counts = tk.Button(text='Counts', width=15, height=2, bg='gray79', command=start_counts, master=frame_buttons1,
                           relief='flat')
 button_leadsbyindustry = tk.Button(text='Leads by industry', width=15, height=2, bg='gray80',
                                    command=start_leadsbyindustry, master=frame_buttons1, relief='flat')
