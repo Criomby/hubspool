@@ -39,7 +39,6 @@ def printall_org_table(inputfile):
     return csv1
 
 def leadsbyindustry(inputfile):
-    global table_savestate1
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Lead Status', 'Industry']]
     insurance = csv1[csv1['Industry'] == 'Insurance'].groupby('Lead Status').size().to_frame().reset_index()
@@ -67,11 +66,9 @@ def leadsbyindustry(inputfile):
         df0).append(df4).append(health).append(df0).append(df5).append(telecomm).append(df0).append(df6).append(
         ecommerce).append(df0).append(df7).append(broker).append(df0).append(df8).append(edu).append(df0).append(
         df9).append(government).append(df0).append(df10).append(nan).rename(columns={0: 'Count'})
-    table_savestate1 = total
     return total
 
 def pitches(inputfile):
-    global table_savestate1
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Name', 'Pitch']]
     filtered_csv1 = csv1[csv1['Pitch'].notnull()]
