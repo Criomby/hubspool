@@ -10,7 +10,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 ## Getting started:
-<img src="https://user-images.githubusercontent.com/86114549/125851390-37a4cc87-ea4e-4d7a-b2ae-265e97fcda2b.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587">
+<img src="https://user-images.githubusercontent.com/86114549/125851390-37a4cc87-ea4e-4d7a-b2ae-265e97fcda2b.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
 <br>
 _______________________________________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
@@ -29,7 +29,7 @@ ________________________________________________________________________________
 <br>
 <br>
 
-## Functions overview:
+## Function descriptions:
 Usually you won't need any other function but 'ALL'.<br>
 Each other function prints the output tables into the text box for manual inspection and can be exported separately to Excel.<br>
 <br>
@@ -61,14 +61,14 @@ ________________________________________________________________________________
 All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
 The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
 <br>
-<img src="https://user-images.githubusercontent.com/86114549/125850888-58582498-ffc7-4b33-8967-00a5f4faaf89.png" alt="Hubspool_v2.2.0_screenshot_counts" width="587"><br>
+<img src="https://user-images.githubusercontent.com/86114549/125850888-58582498-ffc7-4b33-8967-00a5f4faaf89.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630"><br>
 <br>
 Source folder:
 <br>
 <img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="Hubspool_v2.2.0_screenshot_counts" width="200"><br>
 <br>
 The generated Excel file will contain the worksheets:<br>
-<img width="587" alt="Screenshot 2021-07-12 154608" src="https://user-images.githubusercontent.com/86114549/125298368-59d10680-e328-11eb-99d9-b9a52fc75f4f.png">
+<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126050438-5c4983ca-8bf1-46cd-8f4c-faf5f88ca6a4.png">
 <br>
 <br>
   
@@ -78,6 +78,16 @@ The generated Excel file will contain the worksheets:<br>
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
 > <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
+<br>
+The created Excel also contains charts of the data for the sheets 'Leads+Industries', 'Leads_raw' & 'Industries_raw':<br>
+<br>
+<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126050107-e2919d9e-b880-42da-9a4e-5c7d70e792ca.png">
+<br>
+<br>
+<img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126050131-31e62cb5-b8e1-4888-a930-1f9a7be3e324.png">
+<br>
+<br>
+(Only function 'ALL' creates charts).<br>
 _________________________________________________________________________________________________________________________<br>
 <br>
 <li><strong>Print all:</strong><br>
@@ -147,16 +157,21 @@ If a company / contact person rejects Qundo's offer, the reason for the rejectio
 Reference contacts are created as contacts under the respective company.<br>
 The lead status "Reference" is then selected under the respective contact.<br>
 <br>
-<strong>Data import requirements for files not from HubSpot:</strong><br>
-The imported data has to be in the .csv file format.<br>
-The file has to contain the following columns:<br>
-Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch.<br>
-<br>
 
 <h2>FAQ:</h2><br>
 Regarding questions or other inquiries message me at:<br>
 <br>
 <strong>criomby@pm.me</strong><br>
+<br>
+<br>
+<strong>What are the empty cells in the sheet 'Leads+Industries' below 'Industry'?</strong><br>
+Those cells are industries in your data that are not included in the predefined categories above.<br>
+To see those industry names, go to the sheet 'Industries_raw' and they will be shown there.<br>
+<br>
+<strong>Data import requirements for files not from HubSpot:</strong><br>
+The imported data has to be in the .csv file format.<br>
+The file has to contain the following columns:<br>
+Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch.<br>
 <br>
 
 <h2>Support the project:</h2><br>
