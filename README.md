@@ -10,7 +10,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 ## Getting started:
-<img src="https://user-images.githubusercontent.com/86114549/125851390-37a4cc87-ea4e-4d7a-b2ae-265e97fcda2b.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
+<img src="https://user-images.githubusercontent.com/86114549/126069702-497f05f0-3996-4017-851e-f8a05b4551a6.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
 <br>
 _______________________________________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
