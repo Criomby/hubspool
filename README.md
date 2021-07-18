@@ -63,7 +63,7 @@ The exported file will be automatically saved at the filepath where the original
 <br>
 <img src="https://user-images.githubusercontent.com/86114549/125850888-58582498-ffc7-4b33-8967-00a5f4faaf89.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630"><br>
 <br>
-Source folder:
+Folder with original file (left) and created file (right):
 <br>
 <img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="Hubspool_v2.2.0_screenshot_counts" width="200"><br>
 <br>
