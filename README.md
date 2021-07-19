@@ -72,9 +72,10 @@ The generated Excel file will contain the worksheets:<br>
 <br>
 <br>
   
-> <strong>Counts+Industries:</strong> Leads and predefined industries custom sorted (see below).<br>
-> <strong>Counts_raw:</strong> All lead categories displayed, counted and sorted by size descending.<br>
+> <strong>Leads+Industries:</strong> Leads and predefined industries custom sorted (see below).<br>
+> <strong>Leads_raw:</strong> All lead categories displayed, counted and sorted by size descending.<br>
 > <strong>Industries_raw:</strong> All industries displayed, counted and sorted by size descending.<br>
+> <strong>Leads_by_industries:</strong> All the leads categories and counts sorted by industry (predifined industries only, see below).<br>
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
 > <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
