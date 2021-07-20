@@ -7,7 +7,7 @@ def lead_count(inputfile):
     csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size().to_frame().reset_index()
     csv1 = csv1.rename(columns={'Lead Status': 'Description', 0: 'Count'})
     leads_disordered = csv1.sort_values(by='Count', ascending=False)
-    lead_cat_order = CategoricalDtype(['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected'],
+    lead_cat_order = CategoricalDtype(['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected', 'Ineligible'],
                                       ordered=True)
     csv1['Description'] = csv1['Description'].astype(lead_cat_order)
     leads_inorder = csv1.sort_values('Description')
@@ -73,4 +73,11 @@ def pitches(inputfile):
     csv1 = hubspot_org[['Name', 'Pitch']]
     filtered_csv1 = csv1[csv1['Pitch'].notnull()]
     result = filtered_csv1.sort_values(by='Pitch')
+    return result
+
+def reasons(inputfile):
+    hubspot_org = pd.read_csv(inputfile)
+    csv1 = hubspot_org[['Name', 'Industry', 'Lead Status', 'Reason for rejection / unsuitability']]
+    filtered_csv1 = csv1[csv1['Reason for rejection / unsuitability'].notnull()]
+    result = filtered_csv1.sort_values(by='Lead Status')
     return result
