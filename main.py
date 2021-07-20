@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import filedialog as fd
-import os.path
+import os
 from functions import *
+import xlsxwriter
 
 # global variables for data storage across functions
 table_savestate1 = pd.DataFrame()
@@ -28,13 +29,13 @@ def start_counts():
         table_savestate1 = total
         textbox.insert('1.0', '--------------------------------------------------------------------------------')
         textbox.insert('end', '\n')
-        textbox.insert('end', 'Lead categories sorted by size:')
+        textbox.insert('end', 'All lead categories sorted by size:')
         textbox.insert('end', '\n')
         textbox.insert('end', leads_disordered)
         textbox.insert('end', '\n')
         textbox.insert('end', '--------------------------------------------------------------------------------')
         textbox.insert('end', '\n')
-        textbox.insert('end', 'Industries sorted by size:')
+        textbox.insert('end', 'All industries sorted by size:')
         textbox.insert('end', '\n')
         textbox.insert('end', cats_disordered)
         textbox.insert('end', '\n')
@@ -144,10 +145,17 @@ def select_file():
         ('csv files', '*.csv'),
         ('All files', '*.*')
     )
-    filename = fd.askopenfilename(
-    title='Open a file',
-    initialdir='/',
-    filetypes=filetypes)
+    username = os.getlogin()
+    if os.path.isdir('C:/Users/'+username+'/Downloads'):
+        filename = fd.askopenfilename(
+        title='Open a file',
+        initialdir='C:/Users/'+username+'/Downloads',
+        filetypes=filetypes)
+    else:
+        filename = fd.askopenfilename(
+        title='Open a file',
+        initialdir='/',
+        filetypes=filetypes)
     company_data_filepath = filename
     textbox.delete('1.0', tk.END)
     if filename == '':
@@ -254,12 +262,18 @@ def exex_all():
         df_pitches = pitches(x)
         df_pitches.reset_index(drop=True, inplace=True)
         table_savestate5 = df_pitches
-        textbox.insert('end', 'Pitches done.')
+        textbox.insert('end', 'Pitches pitched.')
+        textbox.insert('end', '\n')
+        # reasons for rejection / unsuitability
+        df_reasons = reasons(x)
+        df_reasons.reset_index(drop=True, inplace=True)
+        table_savestate6 = df_reasons
+        textbox.insert('end', 'Rejection reasons read.')
         textbox.insert('end', '\n')
         # topleads
         df_topleads = get_topleads(x)
         df_topleads.reset_index(drop=True, inplace=True)
-        table_savestate6 = df_topleads
+        table_savestate7 = df_topleads
         textbox.insert('end', 'Topleads done.')
         textbox.insert('end', '\n')
         textbox.insert('end', '--------------------------------------------------------------------------------')
@@ -271,15 +285,16 @@ def exex_all():
             table_savestate3.to_excel(writer, sheet_name='Industries_raw', index=False)
             table_savestate4.to_excel(writer, sheet_name='Leads_by_industries', index=False)
             table_savestate5.to_excel(writer, sheet_name='Pitches', index=False)
-            table_savestate6.to_excel(writer, sheet_name='Topleads', index=False)
+            table_savestate6.to_excel(writer, sheet_name='Rejection reasons', index=False)
+            table_savestate7.to_excel(writer, sheet_name='Topleads', index=False)
             # create charts
-            # counts leads disordered
+            # counts leads uncategorized
             workbook = writer.book
             worksheet_leads_raw = writer.sheets['Leads_raw']
             chart_leads_raw = workbook.add_chart({'type': 'bar'})
             chart_leads_raw.add_series({
-                'categories': '=Leads_raw!$A$2:$A$8',
-                'values': '=Leads_raw!$B$2:$B$8',
+                'categories': '=Leads_raw!$A$2:$A$9',
+                'values': '=Leads_raw!$B$2:$B$9',
                 'data_labels': {'value': True},
                 'points': [
                     {'fill': {'color': '#9da7b2'}},
@@ -292,7 +307,7 @@ def exex_all():
                 ]
                 })
             worksheet_leads_raw.insert_chart('E1', chart_leads_raw)
-            # counts industries disordered
+            # counts industries uncategorized
             worksheet_industries_raw = writer.sheets['Industries_raw']
             chart_industries_raw = workbook.add_chart({'type': 'pie'})
             chart_industries_raw.add_series({
@@ -306,8 +321,8 @@ def exex_all():
             worksheet_counts = writer.sheets['Leads+Industries']
             chart_leads_inorder = workbook.add_chart({'type': 'column'})
             chart_leads_inorder.add_series({
-                'categories': '=Leads+Industries!$A$3:$A$9',
-                'values': '=Leads+Industries!$B$3:$B$9',
+                'categories': '=Leads+Industries!$A$3:$A$10',
+                'values': '=Leads+Industries!$B$3:$B$10',
                 'data_labels': {'value': True},
                 'points': [
                     {'fill': {'color': '#9da7b2'}},
@@ -322,8 +337,8 @@ def exex_all():
             worksheet_counts.insert_chart('E1', chart_leads_inorder)
             chart_industries_inorder = workbook.add_chart({'type': 'pie'})
             chart_industries_inorder.add_series({
-                'categories': '=Leads+Industries!$A$12:$A$20',
-                'values': '=Leads+Industries!$B$12:$B$20',
+                'categories': '=Leads+Industries!$A$13:$A$21',
+                'values': '=Leads+Industries!$B$13:$B$21',
                 'data_labels': {'value': True}
             })
             worksheet_counts.insert_chart('E17', chart_industries_inorder)
@@ -336,6 +351,11 @@ def exex_all():
             worksheet_pitches = writer.sheets['Pitches']
             worksheet_pitches.set_column(0,0,21)
             worksheet_pitches.set_column(1,1,39)
+            worksheet_reasons= writer.sheets['Rejection reasons']
+            worksheet_reasons.set_column(0,0,37)
+            worksheet_reasons.set_column(1,1,18)
+            worksheet_reasons.set_column(2,2,12)
+            worksheet_reasons.set_column(3,3,70)
             worksheet_topleads = writer.sheets['Topleads']
             worksheet_topleads.set_column(0,0,34)
             worksheet_topleads.set_column(1,1,14)
@@ -380,12 +400,12 @@ frame_d = tk.Frame()
 frame_d.pack()
 # define labels
 label_space_top = tk.Label(text='Hubspool', width=30, height=1, master=frame_a)
-label_space_top.config(font=("Courier", 44))
+label_space_top.config(font=("Bahnschrift Light", 44))
 label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
 label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
 label4 = tk.Label(text='Copyright 2021 Braum                                                                            ',
                   width=50, height=1, master=frame_0)
-label5 = tk.Label(text='                                                                            Version: 2.5.0',
+label5 = tk.Label(text='                                                                            Version: 2.5.1',
                   width=50, height=1, master=frame_0)
 # define textbox
 textbox = tk.Text(width=100, height=200, master=frame_d)
