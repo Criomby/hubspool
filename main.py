@@ -280,7 +280,7 @@ def exex_all():
         textbox.insert('end', '\n')
         with pd.ExcelWriter(new_filepath) as writer:
             # create Excel
-            table_savestate1.to_excel(writer, sheet_name='Leads+Industries', index=False)
+            table_savestate1.to_excel(writer, sheet_name='Categories', index=False)
             table_savestate2.to_excel(writer, sheet_name='Leads_raw', index=False)
             table_savestate3.to_excel(writer, sheet_name='Industries_raw', index=False)
             table_savestate4.to_excel(writer, sheet_name='Leads_by_industries', index=False)
@@ -317,12 +317,11 @@ def exex_all():
             })
             worksheet_industries_raw.insert_chart('E1', chart_industries_raw)
             # counts inorder charts
-            workbook = writer.book
-            worksheet_counts = writer.sheets['Leads+Industries']
+            worksheet_counts = writer.sheets['Categories']
             chart_leads_inorder = workbook.add_chart({'type': 'column'})
             chart_leads_inorder.add_series({
-                'categories': '=Leads+Industries!$A$3:$A$10',
-                'values': '=Leads+Industries!$B$3:$B$10',
+                'categories': '=Categories!$A$3:$A$10',
+                'values': '=Categories!$B$3:$B$10',
                 'data_labels': {'value': True},
                 'points': [
                     {'fill': {'color': '#9da7b2'}},
@@ -337,8 +336,8 @@ def exex_all():
             worksheet_counts.insert_chart('E1', chart_leads_inorder)
             chart_industries_inorder = workbook.add_chart({'type': 'pie'})
             chart_industries_inorder.add_series({
-                'categories': '=Leads+Industries!$A$13:$A$21',
-                'values': '=Leads+Industries!$B$13:$B$21',
+                'categories': '=Categories!$A$13:$A$21',
+                'values': '=Categories!$B$13:$B$21',
                 'data_labels': {'value': True}
             })
             worksheet_counts.insert_chart('E17', chart_industries_inorder)
