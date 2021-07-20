@@ -68,13 +68,13 @@ Folder with original file (left) and created file (right):
 <img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="output folder" width="200"><br>
 <br>
 The generated Excel file will contain the worksheets:<br>
-<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126323898-b8535791-49a7-486f-bacf-c32e0772e952.png">
+<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126385893-1007b189-208b-41f1-bd75-bb50382a1b01.png">
 <br>
 <br>
-  
-> <strong>Leads+Industries:</strong> Leads and predefined industries custom sorted (see below).<br>
-> <strong>Leads_raw:</strong> All lead categories displayed, counted size and sorted by size descending.<br>
-> <strong>Industries_raw:</strong> All industries displayed, counted size and sorted by size descending.<br>
+
+> <strong>Categories:</strong> Predefined leads and industries custom sorted & analyzed (see below for categories).<br>
+> <strong>Leads_raw:</strong> ALL lead categories displayed, counted size and sorted by size descending.<br>
+> <strong>Industries_raw:</strong> ALL industries displayed, counted size and sorted by size descending.<br>
 > <strong>Leads_by_industries:</strong> All the leads categories and counts sorted by industry (predifined industries only, see below).<br>
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
 > <strong>Rejection reasons:</strong> Companies with lead status 'Rejected' & 'Ineligible' and the data which is given as reason for the status in the data column 'Reason for rejection / unuitability'. (Also all companies with an entry in the 'Reason' column are shown)
