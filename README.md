@@ -10,7 +10,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 ## Getting started:
-<img src="https://user-images.githubusercontent.com/86114549/126069702-497f05f0-3996-4017-851e-f8a05b4551a6.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
+<img src="https://user-images.githubusercontent.com/86114549/126341093-b66ff9a0-eee7-4f1a-8ba9-f2906dd53558.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
 <br>
 _______________________________________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
@@ -61,11 +61,11 @@ ________________________________________________________________________________
 All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
 The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
 <br>
-<img src="https://user-images.githubusercontent.com/86114549/125850888-58582498-ffc7-4b33-8967-00a5f4faaf89.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630"><br>
+<img src="https://user-images.githubusercontent.com/86114549/126341569-1a3578f2-9284-4e4a-8af4-af3fee6386f4.png" alt="textbox output ALL function" width="630"><br>
 <br>
 Folder with original file (left) and created file (right):
 <br>
-<img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="Hubspool_v2.2.0_screenshot_counts" width="200"><br>
+<img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="output folder" width="200"><br>
 <br>
 The generated Excel file will contain the worksheets:<br>
 <img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126323898-b8535791-49a7-486f-bacf-c32e0772e952.png">
