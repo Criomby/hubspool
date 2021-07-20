@@ -1,4 +1,3 @@
-<img width="542" alt="Screenshot 2021-07-20 142239" src="https://user-images.githubusercontent.com/86114549/126323855-396764fb-bcb1-416e-b99b-2a64d2683ad7.png">
 # Hubspool
 #### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics via a simple GUI.
 
@@ -141,6 +140,7 @@ Additionally, with the following lead status & industry categories configured in
   <li>Qualified Lead</li>
   <li>Contract</li>
   <li>Rejected</li>
+  <li>Ineligible</li>
 </ul>
 <br>
 Of course you are free to change the categories for custom sort in the source code should you require different ones.<br>
