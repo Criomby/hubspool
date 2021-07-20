@@ -1,3 +1,4 @@
+<img width="542" alt="Screenshot 2021-07-20 142239" src="https://user-images.githubusercontent.com/86114549/126323855-396764fb-bcb1-416e-b99b-2a64d2683ad7.png">
 # Hubspool
 #### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics via a simple GUI.
 
@@ -68,21 +69,22 @@ Folder with original file (left) and created file (right):
 <img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="Hubspool_v2.2.0_screenshot_counts" width="200"><br>
 <br>
 The generated Excel file will contain the worksheets:<br>
-<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126050438-5c4983ca-8bf1-46cd-8f4c-faf5f88ca6a4.png">
+<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126323898-b8535791-49a7-486f-bacf-c32e0772e952.png">
 <br>
 <br>
   
 > <strong>Leads+Industries:</strong> Leads and predefined industries custom sorted (see below).<br>
-> <strong>Leads_raw:</strong> All lead categories displayed, counted and sorted by size descending.<br>
-> <strong>Industries_raw:</strong> All industries displayed, counted and sorted by size descending.<br>
+> <strong>Leads_raw:</strong> All lead categories displayed, counted size and sorted by size descending.<br>
+> <strong>Industries_raw:</strong> All industries displayed, counted size and sorted by size descending.<br>
 > <strong>Leads_by_industries:</strong> All the leads categories and counts sorted by industry (predifined industries only, see below).<br>
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
+> <strong>Rejection reasons:</strong> Companies with lead status 'Rejected' & 'Ineligible' and the data which is given as reason for the status in the data column 'Reason for rejection / unuitability'. (Also all companies with an entry in the 'Reason' column are shown)
 > <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
 <br>
 The created Excel also contains charts of the data for the sheets 'Leads+Industries', 'Leads_raw' & 'Industries_raw':<br>
 <br>
-<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126050107-e2919d9e-b880-42da-9a4e-5c7d70e792ca.png">
+<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126324068-b9a969eb-a91f-4adc-b7ce-03d16d6262c0.png">
 <br>
 <br>
 <img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126050131-31e62cb5-b8e1-4888-a930-1f9a7be3e324.png">
@@ -152,7 +154,7 @@ For the function 'Pitches', a company information entry has to be set up in HubS
 (again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
 <br>
 <strong>Rejection:</strong><br>
-If a company / contact person rejects Qundo's offer, the reason for the rejection must be entered under "Company Information" under "Reason for rejection".<br>
+If a company / contact person rejects Qundo's offer, the reason for the rejection must be entered under "Company Information" under "Reason for rejection / unsuitability".<br>
 
 <strong>Reference contacts:</strong><br>
 Reference contacts are created as contacts under the respective company.<br>
@@ -172,7 +174,7 @@ To see those industry names, go to the sheet 'Industries_raw' and they will be s
 <strong>Data import requirements for files not from HubSpot:</strong><br>
 The imported data has to be in the .csv file format.<br>
 The file has to contain the following columns:<br>
-Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch.<br>
+Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch, Reason for rejection / unsuitability.<br>
 <br>
 
 <h2>Support the project:</h2><br>
