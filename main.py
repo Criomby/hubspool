@@ -306,6 +306,9 @@ def exex_all():
                     {'fill': {'color': '#a55b75'}}
                 ]
                 })
+            chart_leads_raw.set_x_axis({'name': 'Number of companies'})
+            chart_leads_raw.set_y_axis({'name': 'Status', 'reverse': True})
+            chart_leads_raw.set_title({'name': 'All lead categories'})
             worksheet_leads_raw.insert_chart('E1', chart_leads_raw)
             # counts industries uncategorized
             worksheet_industries_raw = writer.sheets['Industries_raw']
@@ -315,10 +318,11 @@ def exex_all():
                 'values': '=Industries_raw!$B$2:$B$13',
                 'data_labels': {'value': True}
             })
+            chart_industries_raw.set_title({'name': 'All industries'})
             worksheet_industries_raw.insert_chart('E1', chart_industries_raw)
             # counts inorder charts
             worksheet_counts = writer.sheets['Categories']
-            chart_leads_inorder = workbook.add_chart({'type': 'column'})
+            chart_leads_inorder = workbook.add_chart({'type': 'bar'})
             chart_leads_inorder.add_series({
                 'categories': '=Categories!$A$3:$A$10',
                 'values': '=Categories!$B$3:$B$10',
@@ -333,6 +337,9 @@ def exex_all():
                     {'fill': {'color': '#a55b75'}}
                 ]
             })
+            chart_leads_inorder.set_x_axis({'name': 'Number of companies'})
+            chart_leads_inorder.set_y_axis({'name': 'Status', 'reverse': True})
+            chart_leads_inorder.set_title({'name': 'Lead categories'})
             worksheet_counts.insert_chart('E1', chart_leads_inorder)
             chart_industries_inorder = workbook.add_chart({'type': 'pie'})
             chart_industries_inorder.add_series({
@@ -340,6 +347,7 @@ def exex_all():
                 'values': '=Categories!$B$13:$B$21',
                 'data_labels': {'value': True}
             })
+            chart_industries_inorder.set_title({'name': 'Industries'})
             worksheet_counts.insert_chart('E17', chart_industries_inorder)
             # set column width for Excel sheets
             worksheet_counts.set_column(0,0,19)
@@ -383,6 +391,7 @@ def exex_all():
 # GUI
 window = tk.Tk()
 window.title('Hubspool')
+window.iconbitmap('icon.ico')
 window.geometry('660x700')
 window.resizable(False, True)
 # DEFINITIONS
