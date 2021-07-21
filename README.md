@@ -86,13 +86,13 @@ The generated Excel file will contain the worksheets:<br>
 <br>
 The created Excel also contains charts of the data for the sheets 'Leads+Industries', 'Leads_raw' & 'Industries_raw':<br>
 <br>
-<img width="630" alt="Screenshot Excel output categories" src="https://user-images.githubusercontent.com/86114549/126453111-233f1e38-ae8f-45b3-ba35-e83ec944eded.png">
+<img width="630" alt="Screenshot Excel output categories" src="https://user-images.githubusercontent.com/86114549/126545995-59325403-29d4-4194-b14d-f553d183cf20.png">
 <br>
 <br>
-<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126453669-a096b2e3-6e78-49bc-9604-7d11f82116e9.png">
+<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126546050-f27748cd-5485-40d7-81d7-62ce19351794.png">
 <br>
 <br>
-<img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126453740-dee665fe-87f2-495a-a119-9cd36291ada6.png">
+<img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126546112-b015ba8a-01f7-4e3f-98c7-1b6e396561ac.png">
 <br>
 <br>
 (Only function 'ALL' creates charts).<br>
