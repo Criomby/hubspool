@@ -1,5 +1,8 @@
-# Hubspool
+<p align='center'><img src="https://user-images.githubusercontent.com/86114549/126486866-b0074940-70ff-4ecb-8747-7af48b6a8540.png" alt="Hubspool_Logo_Complete" width="300"></p>
+
 #### A data analysis program for .csv database files exported from HubSpot CRM, calculating and exporting several quantitative and qualitative metrics via a simple GUI.
+
+<br>
 
 ## Download Info: <br>
 <h3> Ready-to-use version (Windows only):</h3><br>
