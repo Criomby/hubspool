@@ -46,6 +46,6 @@ they are now numbered from 0 to n when manually exporting to Excel (any function
 Analysis 'Reason for rejection / unsuitability' implemented and added to function 'ALL';<br>
 'Open file' dialog opens in Download directory;<br>
 resolved issue tickets #8 & 9;<br>
-chart axis' labeled & named accordingly;<br>
-window logo changed from tkinter default logo to Hubspool logo image;<br>
+chart axis' labeled & named accordingly, dropped legends for bar charts;<br>
+window & taskbar logo changed from tkinter default logo to Hubspool logo image;<br>
 new written logo font.<br>
