@@ -1,5 +1,7 @@
 import pandas as pd
 from pandas.api.types import CategoricalDtype
+import os
+import sys
 
 # data analysis functions
 def lead_count(inputfile):
@@ -81,3 +83,16 @@ def reasons(inputfile):
     filtered_csv1 = csv1[csv1['Reason for rejection / unsuitability'].notnull()]
     result = filtered_csv1.sort_values(by='Lead Status')
     return result
+
+# function to get the .ico file found in the pyinstaller --onefile exe,
+# which sets the path not as 'env' anymore, but as sys._MEIPASS
+# this code snippet was copied from:
+# https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
