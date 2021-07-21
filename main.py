@@ -308,6 +308,7 @@ def exex_all():
                 })
             chart_leads_raw.set_x_axis({'name': 'Number of companies'})
             chart_leads_raw.set_y_axis({'name': 'Status', 'reverse': True})
+            chart_leads_raw.set_legend({'none': True})
             chart_leads_raw.set_title({'name': 'All lead categories'})
             worksheet_leads_raw.insert_chart('E1', chart_leads_raw)
             # counts industries uncategorized
@@ -339,6 +340,7 @@ def exex_all():
             })
             chart_leads_inorder.set_x_axis({'name': 'Number of companies'})
             chart_leads_inorder.set_y_axis({'name': 'Status', 'reverse': True})
+            chart_leads_inorder.set_legend({'none': True})
             chart_leads_inorder.set_title({'name': 'Lead categories'})
             worksheet_counts.insert_chart('E1', chart_leads_inorder)
             chart_industries_inorder = workbook.add_chart({'type': 'pie'})
@@ -391,7 +393,7 @@ def exex_all():
 # GUI
 window = tk.Tk()
 window.title('Hubspool')
-window.iconbitmap('icon.ico')
+window.iconbitmap(resource_path('icon_in.ico'))
 window.geometry('660x700')
 window.resizable(False, True)
 # DEFINITIONS
@@ -419,7 +421,7 @@ label5 = tk.Label(text='                                                        
 textbox = tk.Text(width=100, height=200, master=frame_d)
 # define buttons
 button_open = tk.Button(text='Open file', width=15, height=2, bg='LightSkyBlue1', command=select_file,
-                         master=frame_buttons1, relief='flat') #groove
+                         master=frame_buttons1, relief='flat')
 button_safe = tk.Button(text='Safe to Excel', width=15, height=2, bg='DarkSeaGreen1', command=save_file, master=frame_buttons1,
                         relief='flat')
 button_delete = tk.Button(text='Delete', width=15, height=2, bg='RosyBrown1', command=delete_text,
