@@ -10,7 +10,7 @@ Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 ## Getting started:
-<img src="https://user-images.githubusercontent.com/86114549/126341093-b66ff9a0-eee7-4f1a-8ba9-f2906dd53558.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
+<img src="https://user-images.githubusercontent.com/86114549/126452821-72b10b3c-3653-48f2-8050-bf79eca6ff61.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
 <br>
 _______________________________________________________________________________________________________________
 <strong><h3>The easiest & quickest way:</h3></strong><br>
@@ -83,10 +83,13 @@ The generated Excel file will contain the worksheets:<br>
 <br>
 The created Excel also contains charts of the data for the sheets 'Leads+Industries', 'Leads_raw' & 'Industries_raw':<br>
 <br>
-<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126324068-b9a969eb-a91f-4adc-b7ce-03d16d6262c0.png">
+<img width="630" alt="Screenshot Excel output categories" src="https://user-images.githubusercontent.com/86114549/126453111-233f1e38-ae8f-45b3-ba35-e83ec944eded.png">
 <br>
 <br>
-<img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126050131-31e62cb5-b8e1-4888-a930-1f9a7be3e324.png">
+<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126453669-a096b2e3-6e78-49bc-9604-7d11f82116e9.png">
+<br>
+<br>
+<img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126453740-dee665fe-87f2-495a-a119-9cd36291ada6.png">
 <br>
 <br>
 (Only function 'ALL' creates charts).<br>
