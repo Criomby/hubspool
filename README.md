@@ -76,11 +76,17 @@ The generated Excel file will contain the worksheets:<br>
 <br>
 
 > <strong>Categories:</strong> Predefined leads and industries custom sorted & analyzed (see below for categories).<br>
+  
 > <strong>Leads_raw:</strong> ALL lead categories displayed, counted size and sorted by size descending.<br>
+  
 > <strong>Industries_raw:</strong> ALL industries displayed, counted size and sorted by size descending.<br>
+  
 > <strong>Leads_by_industries:</strong> All the leads categories and counts sorted by industry (predifined industries only, see below).<br>
+  
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
-> <strong>Rejection reasons:</strong> Companies with lead status 'Rejected' & 'Ineligible' and the data which is given as reason for the status in the data column 'Reason for rejection / unuitability'. (Also all companies with an entry in the 'Reason' column are shown)
+  
+> <strong>Rejection reasons:</strong> Companies with lead status 'Rejected' & 'Ineligible' and the data which is given as reason for the status in the data column 'Reason for rejection / unuitability'. (Also all companies with an entry in the 'Reason' column are shown)<br>
+  
 > <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
 <br>
