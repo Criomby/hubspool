@@ -5,9 +5,8 @@
 <br>
 
 ## Download Info: <br>
-<h3> Ready-to-use version (Windows only):</h3><br>
-Direct download latest release:<br>
-<a href='https://github.com/Criomby/hubspool/releases/download/v2.5.1/Hubspool_v2.5.1.exe'>Hubspool_v2.5.1</a><br>
+<h3> Latest ready-to-use version:</h3>
+<h3><a href='https://github.com/Criomby/hubspool/releases/download/v2.5.1/Hubspool_v2.5.1.exe'>Download Hubspool_v2.5.1</a><br></h3>
 <br>
 Download the .exe and execute it as an administrator.<br>
 <br>
@@ -188,6 +187,14 @@ To see those industry names, go to the sheet 'Industries_raw' and they will be s
 The imported data has to be in the .csv file format.<br>
 The file has to contain the following columns:<br>
 Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch, Reason for rejection / unsuitability.<br>
+<br>
+<strong>I have an Apple computer:</strong><br>
+The ready-to-use-version is Windows only atm.<br>
+To run the program on MacOS, download the two scripts and run them in your IDE or local Python distribution or compile them yourself.<br>
+<br>
+<strong>Which packages are required to run the scripts?</strong><br>
+Native packages: tkinter, sys, os.<br>
+Additional packages: xlsxwriter, pandas.<br>
 <br>
 
 <h2>Support the project:</h2><br>
