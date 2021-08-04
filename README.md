@@ -6,7 +6,9 @@
 
 ## Download Info: <br>
 <h3> Ready-to-use version (Windows only):</h3><br>
-The latest release can be found on the right under 'Releases'. <br>
+Direct download latest release:<br>
+<a href='https://github.com/Criomby/hubspool/releases/download/v2.5.1/Hubspool_v2.5.1.exe'>Hubspool_v2.5.1</a><br>
+<br>
 Download the .exe and execute it as an administrator.<br>
 <br>
 Your antivirus might flag the program when trying to open it for the first time.
@@ -51,7 +53,6 @@ Each other function prints the output tables into the text box for manual inspec
 <li><strong>Open file:</strong><br>
 Open a .csv file exported from HubSpot.<br>
 The imported file has to be in the .csv format.</li>
-<br>
 <li><strong>Save to Excel:</strong><br>
 Saves the last printed function which is seen in the text box as Excel (.xlsx) file.<br>
 (not required for 'ALL')</li>
