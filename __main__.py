@@ -1,3 +1,6 @@
+# Copyright 2021 Criomby
+# criomby@pm.me
+
 import tkinter as tk
 from tkinter import filedialog as fd
 import os
