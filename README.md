@@ -6,7 +6,7 @@
 
 ## Download Info: <br>
 <h3> Latest ready-to-use version:</h3>
-<h3><a href='https://github.com/Criomby/hubspool/releases/download/v2.5.1/Hubspool_v2.5.1.exe'>Download Hubspool_v2.5.1</a><br></h3>
+<h3><a href='https://github.com/Criomby/hubspool/releases/download/v2.5.2/Hubspool_v2.5.2.exe'>Download Hubspool_v2.5.1</a><br></h3>
 <br>
 Download the .exe and execute it as an administrator.<br>
 <br>
