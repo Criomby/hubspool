@@ -13,6 +13,11 @@ Download the .exe and execute it as an administrator.<br>
 Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
+Verify your download:<br>
+(SHA256sum) fcbe2b01a8747875d09ce7cf7d8a67dacc81c900b6937c0252f07a87d451646e<br>
+<br>
+<br>
+
 ## Getting started:
 <img src="https://user-images.githubusercontent.com/86114549/126452821-72b10b3c-3653-48f2-8050-bf79eca6ff61.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
 <br>
