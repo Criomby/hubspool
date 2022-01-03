@@ -1,44 +1,47 @@
+# Copyright 2022 Braum
+# philippebraum@pm.me
+
 import pandas as pd
 from pandas.api.types import CategoricalDtype
 import os
 import sys
 
+
 # data analysis functions
 def lead_count(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Lead Status').size().to_frame().reset_index()
+    csv1 = hubspot_org[['Company name', 'Lead Status', 'Industry']].groupby(
+        'Lead Status').size().to_frame().reset_index()
     csv1 = csv1.rename(columns={'Lead Status': 'Description', 0: 'Count'})
-    leads_disordered = csv1.sort_values(by='Count', ascending=False)
-    lead_cat_order = CategoricalDtype(['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead', 'Contract', 'Rejected', 'Ineligible'],
-                                      ordered=True)
+    lead_cat_order = CategoricalDtype(['Cold', 'Cold Contacted', 'Warm', 'Follow-up', 'Qualified Lead',
+                                       'Contract', 'Rejected', 'Ineligible'], ordered=True)
     csv1['Description'] = csv1['Description'].astype(lead_cat_order)
     leads_inorder = csv1.sort_values('Description')
-    return leads_disordered, leads_inorder
+    return leads_inorder
+
 
 def industry_count(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry']].groupby('Industry').size().to_frame().reset_index()
-    csv1 = csv1.rename(columns={'Industry': 'Description',0: 'Count'})
+    csv1 = hubspot_org[['Company name', 'Lead Status', 'Industry']].groupby('Industry').size().to_frame().reset_index()
+    csv1 = csv1.rename(columns={'Industry': 'Description', 0: 'Count'})
     cats_disordered = csv1.sort_values(by='Count', ascending=False)
-    industry_cat_order = CategoricalDtype(
-        ['Insurance', 'Financial Services', 'Mobility', 'Health', 'Telecommunications', 'eCommerce', 'Online Broker', 'Education', 'Government'],
-        ordered=True)
-    csv1['Description'] = csv1['Description'].astype(industry_cat_order)
-    cats_inorder = csv1.sort_values('Description')
-    return cats_disordered, cats_inorder
+    return cats_disordered
+
 
 def get_topleads(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Company owner']]
+    csv1 = hubspot_org[['Company name', 'Lead Status', 'Industry', 'Company owner']]
     tanalysis_topleads_followup = csv1[csv1['Lead Status'] == 'Follow-up']
     tanalysis_topleads_qualified = tanalysis_topleads_followup.append(csv1[csv1['Lead Status'] == 'Qualified Lead'])
     tanalysis_topleads = tanalysis_topleads_qualified.append(csv1[csv1['Lead Status'] == 'Contract'])
     return tanalysis_topleads
 
+
 def printall_org_table(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Lead Status', 'Industry', 'Create Date']]
+    csv1 = hubspot_org[['Company name', 'Lead Status', 'Industry', 'Create Date']]
     return csv1
+
 
 def leadsbyindustry(inputfile):
     hubspot_org = pd.read_csv(inputfile)
@@ -64,25 +67,29 @@ def leadsbyindustry(inputfile):
     df8 = pd.DataFrame([['Education', '']], columns=insurance.columns)
     df9 = pd.DataFrame([['Government', '']], columns=insurance.columns)
     df10 = pd.DataFrame([['NaN', '']], columns=insurance.columns)
-    total = df1.append(insurance).append(df0).append(df2).append(finance).append(df0).append(df3).append(mobility).append(
+    total = df1.append(insurance).append(df0).append(df2).append(finance).append(df0).append(df3).append(
+        mobility).append(
         df0).append(df4).append(health).append(df0).append(df5).append(telecomm).append(df0).append(df6).append(
         ecommerce).append(df0).append(df7).append(broker).append(df0).append(df8).append(edu).append(df0).append(
         df9).append(government).append(df0).append(df10).append(nan).rename(columns={0: 'Count'})
     return total
 
+
 def pitches(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Pitch']]
+    csv1 = hubspot_org[['Company name', 'Pitch']]
     filtered_csv1 = csv1[csv1['Pitch'].notnull()]
     result = filtered_csv1.sort_values(by='Pitch')
     return result
 
+
 def reasons(inputfile):
     hubspot_org = pd.read_csv(inputfile)
-    csv1 = hubspot_org[['Name', 'Industry', 'Lead Status', 'Reason for rejection / unsuitability']]
+    csv1 = hubspot_org[['Company name', 'Industry', 'Lead Status', 'Reason for rejection / unsuitability']]
     filtered_csv1 = csv1[csv1['Reason for rejection / unsuitability'].notnull()]
     result = filtered_csv1.sort_values(by='Lead Status')
     return result
+
 
 # function to get the .ico file found in the pyinstaller --onefile exe,
 # which sets the path not as 'env' anymore, but as sys._MEIPASS
@@ -96,4 +103,3 @@ def resource_path(relative_path):
     except Exception:
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
-    
