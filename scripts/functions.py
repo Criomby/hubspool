@@ -1,5 +1,6 @@
 # Copyright 2022 Braum
 # philippebraum@pm.me
+# www.philippebraum.de
 
 import pandas as pd
 from pandas.api.types import CategoricalDtype
