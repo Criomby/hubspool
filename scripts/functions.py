@@ -47,32 +47,15 @@ def printall_org_table(inputfile):
 def leadsbyindustry(inputfile):
     hubspot_org = pd.read_csv(inputfile)
     csv1 = hubspot_org[['Lead Status', 'Industry']]
-    insurance = csv1[csv1['Industry'] == 'Insurance'].groupby('Lead Status').size().to_frame().reset_index()
-    finance = csv1[csv1['Industry'] == 'Financial Services'].groupby('Lead Status').size().to_frame().reset_index()
-    mobility = csv1[csv1['Industry'] == 'Mobility'].groupby('Lead Status').size().to_frame().reset_index()
-    health = csv1[csv1['Industry'] == 'Health'].groupby('Lead Status').size().to_frame().reset_index()
-    telecomm = csv1[csv1['Industry'] == 'Telecommunications'].groupby('Lead Status').size().to_frame().reset_index()
-    ecommerce = csv1[csv1['Industry'] == 'eCommerce'].groupby('Lead Status').size().to_frame().reset_index()
-    broker = csv1[csv1['Industry'] == 'Online Broker'].groupby('Lead Status').size().to_frame().reset_index()
-    edu = csv1[csv1['Industry'] == 'Education'].groupby('Lead Status').size().to_frame().reset_index()
-    government = csv1[csv1['Industry'] == 'Government'].groupby('Lead Status').size().to_frame().reset_index()
-    nan = csv1[csv1['Industry'] == 'nan'].groupby('Lead Status').size().to_frame().reset_index()
-    df0 = pd.DataFrame([['', '']], columns=insurance.columns)
-    df1 = pd.DataFrame([['Insurance', '']], columns=insurance.columns)
-    df2 = pd.DataFrame([['Financial Services', '']], columns=insurance.columns)
-    df3 = pd.DataFrame([['Mobility', '']], columns=insurance.columns)
-    df4 = pd.DataFrame([['Health', '']], columns=insurance.columns)
-    df5 = pd.DataFrame([['Telecommunications', '']], columns=insurance.columns)
-    df6 = pd.DataFrame([['eCommerce', '']], columns=insurance.columns)
-    df7 = pd.DataFrame([['Online Broker', '']], columns=insurance.columns)
-    df8 = pd.DataFrame([['Education', '']], columns=insurance.columns)
-    df9 = pd.DataFrame([['Government', '']], columns=insurance.columns)
-    df10 = pd.DataFrame([['NaN', '']], columns=insurance.columns)
-    total = df1.append(insurance).append(df0).append(df2).append(finance).append(df0).append(df3).append(
-        mobility).append(
-        df0).append(df4).append(health).append(df0).append(df5).append(telecomm).append(df0).append(df6).append(
-        ecommerce).append(df0).append(df7).append(broker).append(df0).append(df8).append(edu).append(df0).append(
-        df9).append(government).append(df0).append(df10).append(nan).rename(columns={0: 'Count'})
+    total = pd.DataFrame([['', '']], columns=pd.Index(['Lead Status', 0], dtype='object'))
+    empt = pd.DataFrame([['', '']], columns=pd.Index(['Lead Status', 0], dtype='object'))
+    industries = csv1['Industry'].unique().tolist()
+    for i in industries:
+        x = csv1[csv1['Industry'] == i].groupby(
+            'Lead Status').size().to_frame().reset_index().sort_values(by=[0], ascending=False)
+        dfx = pd.DataFrame([[i, '']], columns=x.columns)
+        total = total.append(dfx).append(x).append(empt)
+    total.rename(columns={'Lead Status': 'Description', 0: 'Count'}, inplace=True)
     return total
 
 
