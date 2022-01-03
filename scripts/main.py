@@ -1,5 +1,6 @@
-# Copyright 2021 Criomby
-# criomby@pm.me
+# Copyright 2022 Braum
+# philippebraum@pm.me
+# www.philippebraum.de
 
 import datetime
 import tkinter as tk
