@@ -1,4 +1,6 @@
 <strong>2.6.0</strong><br>
+Function 'Leads by industries' (incl. in 'ALL') now automatically gets the available industries from the imported dataset,<br>
+counts the lead categories of each individual industry and outputs it;<br>
 Catgeories xls sheet removed,<br>
 leads now always logically ordered / industries categories now always size-ordered;<br>
 Same changes applied to textbox output with function 'Counts';<br>
