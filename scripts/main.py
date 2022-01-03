@@ -24,6 +24,7 @@ class App(tk.Tk):
         self.iconbitmap(resource_path('icon_in.ico'))
         self.geometry('660x700')
         self.resizable(False, True)
+
         # basic layout
         frame_0 = tk.Frame()
         frame_0.pack()
@@ -37,7 +38,7 @@ class App(tk.Tk):
         frame_d.pack()
         # logo image
         self.logo = 'logo_gui.jpg'
-        self.logo_open = Image.open(self.logo)
+        self.logo_open = Image.open(resource_path(self.logo))
         self.img_logo = ImageTk.PhotoImage(self.logo_open)
         self.label_logo = tk.Label(image=self.img_logo, master=frame_a)
         # define labels
@@ -47,7 +48,7 @@ class App(tk.Tk):
             text='Copyright 2022 Braum                                                                             ',
             width=50, height=1, master=frame_0)
         label5 = tk.Label(
-            text='                                                                            Version: 2.6.0',
+            text='                                                                             Version: 2.6.0',
             width=50, height=1, master=frame_0)
         # define textbox
         self.textbox = tk.Text(width=100, height=200, master=frame_d)
@@ -72,6 +73,7 @@ class App(tk.Tk):
                                     master=frame_buttons1, relief='flat')
         button_pitches = tk.Button(text='Pitches', width=15, height=2, command=self.start_pitches, bg='gray89',
                                    master=frame_buttons1, relief='flat')
+
         # PACKS
         label4.pack(side=tk.LEFT)
         label5.pack(side=tk.RIGHT)
@@ -107,29 +109,29 @@ class App(tk.Tk):
             total = df1.append(leads_inorder).append(df0).append(df2).append(cats_disordered)
             self.table_savestate1 = total
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Lead categories:')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', leads_inorder)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Industries sorted by size:')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', cats_disordered)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: No file opened. Select a file first.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
 
     def start_topleads(self):
         self.textbox.delete('1.0', tk.END)
@@ -137,20 +139,20 @@ class App(tk.Tk):
             result = get_topleads(self.company_data_filepath)
             self.table_savestate1 = result
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', result)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: No file opened. Select a file first.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
 
     def printall_button(self):
         x = self.company_data_filepath
@@ -158,20 +160,20 @@ class App(tk.Tk):
         if os.path.isfile(x):
             dataset = printall_org_table(x)
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', dataset)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: No file opened. Select a file first.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
 
     def start_leadsbyindustry(self):
@@ -181,20 +183,21 @@ class App(tk.Tk):
             result = leadsbyindustry(x)
             self.table_savestate1 = result
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', result)
+            with pd.option_context("display.max_rows", None):
+                self.textbox.insert('end', result)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: No file opened. Select a file first.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
 
     def start_pitches(self):
         x = self.company_data_filepath
@@ -203,20 +206,20 @@ class App(tk.Tk):
             result = pitches(x)
             self.table_savestate1 = result
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', result)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: No file opened. Select a file first.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
 
     def select_file(self):
         filetypes = (
@@ -237,22 +240,22 @@ class App(tk.Tk):
         self.textbox.delete('1.0', tk.END)
         if filename == '':
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'No file selected.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Opened file:')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', filename)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
 
     def save_file(self):
         filetypes = (
@@ -263,12 +266,12 @@ class App(tk.Tk):
         self.textbox.delete('1.0', tk.END)
         if self.table_savestate1.empty:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: Execute a function first to save it.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         else:
             filename = fd.asksaveasfilename(
                 title='Save a file',
@@ -276,21 +279,21 @@ class App(tk.Tk):
                 filetypes=filetypes)
             if filename == '':
                 self.textbox.insert('1.0',
-                                    '--------------------------------------------------------------------------------')
+                                    '----------------------------------------------------------------------------------')
                 self.textbox.insert('end', '\n')
                 self.textbox.insert('end', 'No file saved.')
                 self.textbox.insert('end', '\n')
                 self.textbox.insert('end',
-                                    '--------------------------------------------------------------------------------')
+                                    '----------------------------------------------------------------------------------')
             else:
                 self.table_savestate1.to_excel(filename + '.xlsx')
                 self.textbox.insert('1.0',
-                                    '--------------------------------------------------------------------------------')
+                                    '----------------------------------------------------------------------------------')
                 self.textbox.insert('end', '\n')
                 self.textbox.insert('end', 'Saved file: ' + filename + '.xlsx')
                 self.textbox.insert('end', '\n')
                 self.textbox.insert('end',
-                                    '--------------------------------------------------------------------------------')
+                                    '----------------------------------------------------------------------------------')
 
     def exec_all(self):
         x = self.company_data_filepath
@@ -299,7 +302,7 @@ class App(tk.Tk):
         self.textbox.delete('1.0', tk.END)
         if os.path.isfile(new_filepath):
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: File already exists. ')
             self.textbox.insert('end', '\n')
@@ -313,7 +316,7 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
         elif os.path.isfile(x):
             # counts
             leads_inorder = lead_count(x)
@@ -323,7 +326,7 @@ class App(tk.Tk):
             table_savestate2 = leads_inorder
             table_savestate3 = cats_disordered
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Lead count oho.')
             self.textbox.insert('end', '\n')
@@ -333,7 +336,7 @@ class App(tk.Tk):
             df_leadsbyindustry = leadsbyindustry(x)
             df_leadsbyindustry.reset_index(drop=True, inplace=True)
             table_savestate4 = df_leadsbyindustry
-            self.textbox.insert('end', 'Leads_by_industry done.')
+            self.textbox.insert('end', 'Leads_by_industry counted.')
             self.textbox.insert('end', '\n')
             # pitches
             df_pitches = pitches(x)
@@ -354,7 +357,7 @@ class App(tk.Tk):
             self.textbox.insert('end', 'Topleads topped.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             with pd.ExcelWriter(new_filepath) as writer:
                 # create Excel file
@@ -365,7 +368,7 @@ class App(tk.Tk):
                 table_savestate6.to_excel(writer, sheet_name='Rejection reasons', index=False)
                 table_savestate7.to_excel(writer, sheet_name='Topleads', index=False)
                 # create charts
-                # counts leads uncategorized
+                # counts leads inorder
                 workbook = writer.book
                 worksheet_leads = writer.sheets['Leads']
                 chart_leads = workbook.add_chart({'type': 'bar'})
@@ -388,7 +391,7 @@ class App(tk.Tk):
                 chart_leads.set_legend({'none': True})
                 chart_leads.set_title({'name': 'All lead categories'})
                 worksheet_leads.insert_chart('E2', chart_leads)
-                # counts industries uncategorized
+                # counts industries size-sorted
                 worksheet_industries = writer.sheets['Industries']
                 chart_industries = workbook.add_chart({'type': 'pie'})
                 chart_industries.add_series({
@@ -419,25 +422,23 @@ class App(tk.Tk):
             self.textbox.insert('end', 'Charts generated.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
-            #self.textbox.insert('end', '\n')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Excel file saved to:')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', new_filepath)
-            #self.textbox.insert('end', '\n')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Error: Open a file first.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
+                                '----------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
 
 
