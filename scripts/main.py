@@ -44,10 +44,10 @@ class App(tk.Tk):
         label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
         label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
         label4 = tk.Label(
-            text='Copyright 2021 Braum                                                                             ',
+            text='Copyright 2022 Braum                                                                             ',
             width=50, height=1, master=frame_0)
         label5 = tk.Label(
-            text='                                                                            Version: 2.5.2',
+            text='                                                                            Version: 2.6.0',
             width=50, height=1, master=frame_0)
         # define textbox
         self.textbox = tk.Text(width=100, height=200, master=frame_d)
