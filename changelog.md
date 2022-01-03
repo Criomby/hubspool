@@ -2,6 +2,7 @@
 Catgeories xls sheet removed,<br>
 leads now always logically ordered / industries categories now always size-ordered;<br>
 Same changes applied to textbox output with function 'Counts';<br>
+Filename output via function 'ALL' changed to 'Hubspool_{current_date}.xslx'
 Replaced written logo with round graphical logo in GUI;<br>
 <strong>2.5.1</strong><br>
 Analysis 'Reason for rejection / unsuitability' implemented and added to function 'ALL';<br>
