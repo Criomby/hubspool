@@ -1,27 +1,28 @@
 # Copyright 2021 Criomby
 # criomby@pm.me
 
+import datetime
 import tkinter as tk
 from tkinter import filedialog as fd
-import os
+from PIL import ImageTk, Image
 from functions import *
 import xlsxwriter
+import os
+import sys
+
 
 class App(tk.Tk):
 
     def __init__(self):
         super(App, self).__init__()
-        # global variables for data storage across functions
         self.table_savestate1 = pd.DataFrame()
         self.company_data_filepath = 'none'
 
         # GUI
-        #self.window = tk.Tk()
         self.title('Hubspool')
-        #self.window.iconbitmap(resource_path('icon_in.ico'))
+        self.iconbitmap(resource_path('icon_in.ico'))
         self.geometry('660x700')
         self.resizable(False, True)
-        # DEFINITIONS
         # basic layout
         frame_0 = tk.Frame()
         frame_0.pack()
@@ -33,13 +34,16 @@ class App(tk.Tk):
         frame_c.pack()
         frame_d = tk.Frame()
         frame_d.pack()
+        # logo image
+        self.logo = 'logo_gui.jpg'
+        self.logo_open = Image.open(self.logo)
+        self.img_logo = ImageTk.PhotoImage(self.logo_open)
+        self.label_logo = tk.Label(image=self.img_logo, master=frame_a)
         # define labels
-        label_space_top = tk.Label(text='Hubspool', width=30, height=1, master=frame_a)
-        label_space_top.config(font=("Bahnschrift Light", 44))
         label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
         label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
         label4 = tk.Label(
-            text='Copyright 2021 Criomby                                                                           ',
+            text='Copyright 2021 Braum                                                                             ',
             width=50, height=1, master=frame_0)
         label5 = tk.Label(
             text='                                                                            Version: 2.5.2',
@@ -54,7 +58,7 @@ class App(tk.Tk):
                                 relief='flat')
         button_delete = tk.Button(text='Delete', width=15, height=2, bg='RosyBrown1', command=self.delete_text,
                                   master=frame_buttons1, relief='flat')
-        button_all = tk.Button(text='ALL', width=15, height=2, command=self.exex_all, bg='gray39', fg='white',
+        button_all = tk.Button(text='ALL', width=15, height=2, command=self.exec_all, bg='gray39', fg='white',
                                master=frame_buttons1, relief='flat')
         button_printall = tk.Button(text='Print all', width=15, height=2, bg='gray75', command=self.printall_button,
                                     master=frame_buttons1, relief='flat')
@@ -67,11 +71,10 @@ class App(tk.Tk):
                                     master=frame_buttons1, relief='flat')
         button_pitches = tk.Button(text='Pitches', width=15, height=2, command=self.start_pitches, bg='gray89',
                                    master=frame_buttons1, relief='flat')
-
         # PACKS
         label4.pack(side=tk.LEFT)
         label5.pack(side=tk.RIGHT)
-        label_space_top.pack(pady='10')
+        self.label_logo.pack()
         label_space3.pack()
         # button grid layout
         button_open.grid(row=0, column=0, pady='10')
@@ -88,45 +91,36 @@ class App(tk.Tk):
 
     # button functions
     def delete_text(self):
-        # global table_savestate1
         self.textbox.delete('1.0', tk.END)
         self.table_savestate1 = pd.DataFrame()
 
     def start_counts(self):
-        # global table_savestate1
-        # global company_data_filepath
         x = self.company_data_filepath
         self.textbox.delete('1.0', tk.END)
         if os.path.isfile(x):
-            leads_disordered, leads_inorder = lead_count(x)
-            cats_disordered, cats_inorder = industry_count(x)
-            df0 = pd.DataFrame([['', '']], columns=leads_disordered.columns)
+            leads_inorder = lead_count(x)
+            cats_disordered = industry_count(x)
+            df0 = pd.DataFrame([['', '']], columns=leads_inorder.columns)
             df1 = pd.DataFrame([['Lead', '']], columns=df0.columns)
             df2 = pd.DataFrame([['Industry', '']], columns=df0.columns)
-            total = df1.append(leads_inorder).append(df0).append(df2).append(cats_inorder)
+            total = df1.append(leads_inorder).append(df0).append(df2).append(cats_disordered)
             self.table_savestate1 = total
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', 'All lead categories sorted by size:')
+            self.textbox.insert('end', 'Lead categories:')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', leads_disordered)
+            self.textbox.insert('end', leads_inorder)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', 'All industries sorted by size:')
+            self.textbox.insert('end', 'Industries sorted by size:')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', cats_disordered)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
-            self.textbox.insert('end', total)
-            self.textbox.insert('end', '\n')
-            self.textbox.insert('end',
-                                '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
@@ -135,11 +129,8 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
 
     def start_topleads(self):
-        # global table_savestate1
-        # global company_data_filepath
         self.textbox.delete('1.0', tk.END)
         if os.path.isfile(self.company_data_filepath):
             result = get_topleads(self.company_data_filepath)
@@ -151,7 +142,6 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
@@ -160,23 +150,19 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
 
     def printall_button(self):
-        # global company_data_filepath
         x = self.company_data_filepath
-        # x = entry_filepath_open.get()
         self.textbox.delete('1.0', tk.END)
         if os.path.isfile(x):
-            result = printall_org_table(x)
+            dataset = printall_org_table(x)
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', result)
+            self.textbox.insert('end', dataset)
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
@@ -188,8 +174,6 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
 
     def start_leadsbyindustry(self):
-        # global table_savestate1
-        # global company_data_filepath
         x = self.company_data_filepath
         self.textbox.delete('1.0', tk.END)
         if os.path.isfile(x):
@@ -202,7 +186,6 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
@@ -211,11 +194,8 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
 
     def start_pitches(self):
-        # global table_savestate1
-        # global company_data_filepath
         x = self.company_data_filepath
         self.textbox.delete('1.0', tk.END)
         if os.path.isfile(x):
@@ -228,7 +208,6 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
@@ -237,10 +216,8 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
 
     def select_file(self):
-        # global company_data_filepath
         filetypes = (
             ('CSV files', '*.csv'),
         )
@@ -265,7 +242,6 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
@@ -276,17 +252,15 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
 
     def save_file(self):
-        # global table_savestate1
         filetypes = (
             ('Excel files', '*.xlsx'),
             ('csv files', '*.csv'),
             ('All files', '*.*')
         )
         self.textbox.delete('1.0', tk.END)
-        if self.table_savestate1.empty == True:
+        if self.table_savestate1.empty:
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
@@ -294,7 +268,6 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
         else:
             filename = fd.asksaveasfilename(
                 title='Save a file',
@@ -308,24 +281,22 @@ class App(tk.Tk):
                 self.textbox.insert('end', '\n')
                 self.textbox.insert('end',
                                     '--------------------------------------------------------------------------------')
-                self.textbox.insert('end', '\n')
             else:
                 self.table_savestate1.to_excel(filename + '.xlsx')
                 self.textbox.insert('1.0',
                                     '--------------------------------------------------------------------------------')
                 self.textbox.insert('end', '\n')
-                self.textbox.insert('end', 'Saved file: ' + filename)
+                self.textbox.insert('end', 'Saved file: ' + filename + '.xlsx')
                 self.textbox.insert('end', '\n')
                 self.textbox.insert('end',
                                     '--------------------------------------------------------------------------------')
-                self.textbox.insert('end', '\n')
 
-    def exex_all(self):
-        # global company_data_filepath
+    def exec_all(self):
         x = self.company_data_filepath
-        new_filepath = x[:-4] + '_Hubspool.xlsx'
+        date = datetime.date.today()
+        new_filepath = x[:-48] + f'Hubspool_{date}.xlsx'
         self.textbox.delete('1.0', tk.END)
-        if os.path.isfile(new_filepath) == True:
+        if os.path.isfile(new_filepath):
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
@@ -342,33 +313,26 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
-        elif os.path.isfile(x) == True:
+        elif os.path.isfile(x):
             # counts
-            leads_disordered, leads_inorder = lead_count(x)
-            cats_disordered, cats_inorder = industry_count(x)
-            df0 = pd.DataFrame([['', '']], columns=leads_disordered.columns)
-            df1 = pd.DataFrame([['Lead', '']], columns=df0.columns)
-            df2 = pd.DataFrame([['Industry', '']], columns=df0.columns)
-            total = df1.append(leads_inorder).append(df0).append(df2).append(cats_inorder)
-            total.reset_index(drop=True, inplace=True)
-            leads_disordered.reset_index(drop=True, inplace=True)
+            leads_inorder = lead_count(x)
+            cats_disordered = industry_count(x)
+            leads_inorder.reset_index(drop=True, inplace=True)
             cats_disordered.reset_index(drop=True, inplace=True)
-            table_savestate1 = total
-            table_savestate2 = leads_disordered
+            table_savestate2 = leads_inorder
             table_savestate3 = cats_disordered
             self.textbox.insert('1.0',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', 'Counts (ordered) done.')
+            self.textbox.insert('end', 'Lead count oho.')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', 'Counts (raw / size sorted) done.')
+            self.textbox.insert('end', 'Industry count aha.')
             self.textbox.insert('end', '\n')
             # leads by industry
             df_leadsbyindustry = leadsbyindustry(x)
             df_leadsbyindustry.reset_index(drop=True, inplace=True)
             table_savestate4 = df_leadsbyindustry
-            self.textbox.insert('end', 'Leads by industry done.')
+            self.textbox.insert('end', 'Leads_by_industry done.')
             self.textbox.insert('end', '\n')
             # pitches
             df_pitches = pitches(x)
@@ -386,16 +350,15 @@ class App(tk.Tk):
             df_topleads = get_topleads(x)
             df_topleads.reset_index(drop=True, inplace=True)
             table_savestate7 = df_topleads
-            self.textbox.insert('end', 'Topleads done.')
+            self.textbox.insert('end', 'Topleads topped.')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
             with pd.ExcelWriter(new_filepath) as writer:
-                # create Excel
-                table_savestate1.to_excel(writer, sheet_name='Categories', index=False)
-                table_savestate2.to_excel(writer, sheet_name='Leads_raw', index=False)
-                table_savestate3.to_excel(writer, sheet_name='Industries_raw', index=False)
+                # create Excel file
+                table_savestate2.to_excel(writer, sheet_name='Leads', index=False)
+                table_savestate3.to_excel(writer, sheet_name='Industries', index=False)
                 table_savestate4.to_excel(writer, sheet_name='Leads_by_industries', index=False)
                 table_savestate5.to_excel(writer, sheet_name='Pitches', index=False)
                 table_savestate6.to_excel(writer, sheet_name='Rejection reasons', index=False)
@@ -403,11 +366,11 @@ class App(tk.Tk):
                 # create charts
                 # counts leads uncategorized
                 workbook = writer.book
-                worksheet_leads_raw = writer.sheets['Leads_raw']
-                chart_leads_raw = workbook.add_chart({'type': 'bar'})
-                chart_leads_raw.add_series({
-                    'categories': '=Leads_raw!$A$2:$A$9',
-                    'values': '=Leads_raw!$B$2:$B$9',
+                worksheet_leads = writer.sheets['Leads']
+                chart_leads = workbook.add_chart({'type': 'bar'})
+                chart_leads.add_series({
+                    'categories': '=Leads!$A$2:$A$9',
+                    'values': '=Leads!$B$2:$B$9',
                     'data_labels': {'value': True},
                     'points': [
                         {'fill': {'color': '#9da7b2'}},
@@ -416,58 +379,27 @@ class App(tk.Tk):
                         {'fill': {'color': '#f2a007'}},
                         {'fill': {'color': '#5b7b63'}},
                         {'fill': {'color': '#8c0410'}},
-                        {'fill': {'color': '#a55b75'}}
+                        {'fill': {'color': '#a55b75'}},
                     ]
                 })
-                chart_leads_raw.set_x_axis({'name': 'Number of companies'})
-                chart_leads_raw.set_y_axis({'name': 'Status', 'reverse': True})
-                chart_leads_raw.set_legend({'none': True})
-                chart_leads_raw.set_title({'name': 'All lead categories'})
-                worksheet_leads_raw.insert_chart('E1', chart_leads_raw)
+                chart_leads.set_x_axis({'name': 'Number of companies'})
+                chart_leads.set_y_axis({'name': 'Status', 'reverse': True})
+                chart_leads.set_legend({'none': True})
+                chart_leads.set_title({'name': 'All lead categories'})
+                worksheet_leads.insert_chart('E2', chart_leads)
                 # counts industries uncategorized
-                worksheet_industries_raw = writer.sheets['Industries_raw']
-                chart_industries_raw = workbook.add_chart({'type': 'pie'})
-                chart_industries_raw.add_series({
-                    'categories': '=Industries_raw!$A$2:$A$13',
-                    'values': '=Industries_raw!$B$2:$B$13',
+                worksheet_industries = writer.sheets['Industries']
+                chart_industries = workbook.add_chart({'type': 'pie'})
+                chart_industries.add_series({
+                    'categories': '=Industries!$A$2:$A$16',
+                    'values': '=Industries!$B$2:$B$16',
                     'data_labels': {'value': True}
                 })
-                chart_industries_raw.set_title({'name': 'All industries'})
-                worksheet_industries_raw.insert_chart('E1', chart_industries_raw)
-                # counts inorder charts
-                worksheet_counts = writer.sheets['Categories']
-                chart_leads_inorder = workbook.add_chart({'type': 'bar'})
-                chart_leads_inorder.add_series({
-                    'categories': '=Categories!$A$3:$A$10',
-                    'values': '=Categories!$B$3:$B$10',
-                    'data_labels': {'value': True},
-                    'points': [
-                        {'fill': {'color': '#9da7b2'}},
-                        {'fill': {'color': '#5c7f90'}},
-                        {'fill': {'color': '#005778'}},
-                        {'fill': {'color': '#f2a007'}},
-                        {'fill': {'color': '#5b7b63'}},
-                        {'fill': {'color': '#8c0410'}},
-                        {'fill': {'color': '#a55b75'}}
-                    ]
-                })
-                chart_leads_inorder.set_x_axis({'name': 'Number of companies'})
-                chart_leads_inorder.set_y_axis({'name': 'Status', 'reverse': True})
-                chart_leads_inorder.set_legend({'none': True})
-                chart_leads_inorder.set_title({'name': 'Lead categories'})
-                worksheet_counts.insert_chart('E1', chart_leads_inorder)
-                chart_industries_inorder = workbook.add_chart({'type': 'pie'})
-                chart_industries_inorder.add_series({
-                    'categories': '=Categories!$A$13:$A$21',
-                    'values': '=Categories!$B$13:$B$21',
-                    'data_labels': {'value': True}
-                })
-                chart_industries_inorder.set_title({'name': 'Industries'})
-                worksheet_counts.insert_chart('E17', chart_industries_inorder)
+                chart_industries.set_title({'name': 'All industries'})
+                worksheet_industries.insert_chart('E2', chart_industries)
                 # set column width for Excel sheets
-                worksheet_counts.set_column(0, 0, 19)
-                worksheet_leads_raw.set_column(0, 0, 15)
-                worksheet_industries_raw.set_column(0, 0, 22)
+                worksheet_leads.set_column(0, 0, 15)
+                worksheet_industries.set_column(0, 0, 22)
                 worksheet_leadsbyindustries = writer.sheets['Leads_by_industries']
                 worksheet_leadsbyindustries.set_column(0, 0, 19)
                 worksheet_pitches = writer.sheets['Pitches']
@@ -487,12 +419,12 @@ class App(tk.Tk):
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
-            self.textbox.insert('end', '\n')
+            #self.textbox.insert('end', '\n')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end', 'Excel file saved to:')
             self.textbox.insert('end', '\n')
-            self.textbox.insert('end', new_filepath[:-5])
-            self.textbox.insert('end', '\n')
+            self.textbox.insert('end', new_filepath)
+            #self.textbox.insert('end', '\n')
             self.textbox.insert('end', '\n')
             self.textbox.insert('end',
                                 '--------------------------------------------------------------------------------')
@@ -507,7 +439,7 @@ class App(tk.Tk):
                                 '--------------------------------------------------------------------------------')
             self.textbox.insert('end', '\n')
 
+
 if __name__ == '__main__':
     app = App()
     app.mainloop()
-    
