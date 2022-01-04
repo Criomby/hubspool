@@ -5,8 +5,8 @@
 <br>
 
 ## Download Info: <br>
-<h3> Latest ready-to-use version:</h3>
-<h3><a href='https://github.com/Criomby/hubspool/releases/download/v2.5.2/Hubspool_v2.5.2.exe'>Download Hubspool_v2.5.1</a><br></h3>
+<h3> Latest ready-to-use version (Windows only):</h3>
+<h3><a href='https://github.com/Criomby/hubspool/releases/download/v2.6.0/Hubspool_v2.6.0.exe'>Download Hubspool_v2.6.0.exe</a><br></h3>
 <br>
 Download the .exe and execute it as an administrator.<br>
 <br>
@@ -14,15 +14,16 @@ Your antivirus might flag the program when trying to open it for the first time.
 <h3>Be reassured: It's open source and safe for you and your data!</h3><br>
 
 Verify your download:<br>
-(SHA256sum) fcbe2b01a8747875d09ce7cf7d8a67dacc81c900b6937c0252f07a87d451646e<br>
+(SHA256sum) 4a54fdcd02b9cc66f5435d630764c132c2f953f9e2587f4d54a739c548c0f460<br>
+(To verify your download you can use the <a href='https://github.com/Criomby/AutoHasher'>AutoHasher</a>)
 <br>
 <br>
 
 ## Getting started:
-<img src="https://user-images.githubusercontent.com/86114549/126452821-72b10b3c-3653-48f2-8050-bf79eca6ff61.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
+<img src="https://user-images.githubusercontent.com/86114549/148035625-6f5acfec-d127-44b2-8934-b5e9d43453e3.png" alt="Hubspool_v2.2.0_screenshot_counts" width="630">
 <br>
 _______________________________________________________________________________________________________________
-<strong><h3>The easiest & quickest way:</h3></strong><br>
+<strong><h3>The intended way:</h3></strong><br>
 <ul>
 <li><strong>Open file:</strong><br>
 Select your HubSpot exported .csv file.<br>
@@ -69,41 +70,36 @@ ________________________________________________________________________________
 All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
 The exported file will be automatically saved at the filepath where the original file is saved, with '_Hubspool' added to the filename.<br>
 <br>
-<img src="https://user-images.githubusercontent.com/86114549/126341569-1a3578f2-9284-4e4a-8af4-af3fee6386f4.png" alt="textbox output ALL function" width="630"><br>
+<img src="https://user-images.githubusercontent.com/86114549/148035828-7e3d8601-ac9c-4a92-9ae1-2bdb277332b0.png" alt="textbox output ALL function" width="630"><br>
 <br>
-Folder with original file (left) and created file (right):
+Folder with original file (right) and created file (left):
 <br>
-<img src="https://user-images.githubusercontent.com/86114549/125850530-87264001-8089-447f-9634-bedebf6516ed.png" alt="output folder" width="200"><br>
+<img src="https://user-images.githubusercontent.com/86114549/148035875-46cc633b-350e-4edb-a3cb-d3fcce84ffc4.png" alt="output folder" width="200"><br>
 <br>
 The generated Excel file will contain the worksheets:<br>
-<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/126385893-1007b189-208b-41f1-bd75-bb50382a1b01.png">
+<img width="630" alt="Screenshot worksheets" src="https://user-images.githubusercontent.com/86114549/148036302-9f53401f-cf78-42ff-8efa-175b39c113b6.png">
 <br>
 <br>
 
-> <strong>Categories:</strong> Predefined leads and industries custom sorted & analyzed (see below for categories).<br>
+> <strong>Leads:</strong> ALL lead categories, size and logically sorted.<br>
 >
-> <strong>Leads_raw:</strong> ALL lead categories displayed, counted size and sorted by size descending.<br>
+> <strong>Industries:</strong> ALL industries, size and sorted by size descending.<br>
 >
-> <strong>Industries_raw:</strong> ALL industries displayed, counted size and sorted by size descending.<br>
->
-> <strong>Leads_by_industries:</strong> All the leads categories and counts sorted by industry (predifined industries only, see below).<br>
+> <strong>Leads_by_industries:</strong> Lead category counts sorted by industry.<br>
 >
 > <strong>Pitches:</strong> All data entries with sales pitches info dispayed and sorted by status and date (see below).<br>
 > 
 > <strong>Rejection reasons:</strong> Companies with lead status 'Rejected' & 'Ineligible' and the data which is given as reason for the status in the data column 'Reason for rejection / unuitability'. (Also all companies with an entry in the 'Reason' column are shown)<br>
 > 
-> <strong>Topleads:</strong> All data entries with the status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
+> <strong>Topleads:</strong> All data entries with the lead status 'Follow-up', 'Qualified Lead', or 'Contract'.<br>
 
 <br>
-The created Excel also contains charts of the data for the sheets 'Leads+Industries', 'Leads_raw' & 'Industries_raw':<br>
+The created Excel also contains charts of the data for the sheets 'Leads' & 'Industries':<br>
 <br>
-<img width="630" alt="Screenshot Excel output categories" src="https://user-images.githubusercontent.com/86114549/126545995-59325403-29d4-4194-b14d-f553d183cf20.png">
-<br>
-<br>
-<img width="630" alt="Screenshot Excel output ALL leads_raw" src="https://user-images.githubusercontent.com/86114549/126546050-f27748cd-5485-40d7-81d7-62ce19351794.png">
+<img width="630" alt="Screenshot Excel output ALL leads" src="https://user-images.githubusercontent.com/86114549/148036876-e4d6ec85-3715-4fc9-92f1-caf13d18e9ce.png">
 <br>
 <br>
-<img width="630" alt="Screenshot Excel output ALL industries_raw" src="https://user-images.githubusercontent.com/86114549/126546112-b015ba8a-01f7-4e3f-98c7-1b6e396561ac.png">
+<img width="630" alt="Screenshot Excel output ALL industries" src="https://user-images.githubusercontent.com/86114549/148036920-e8bdb6b5-eae1-465e-8c8f-3883f074cdd3.png">
 <br>
 <br>
 (Only function 'ALL' creates charts).<br>
@@ -114,11 +110,12 @@ Prints out the first 5 top and bottom rows, to see if the file contains the late
 <li><strong>Counts:</strong><br>
 1. Counts the all different lead categorie and number of entries in them.<br></li>
 2. Counts all industries and number of entries in them.<br>
-3. Puts out an additional custom sorted table with the leads and industries counted as specified by the categories below.<br>
+  <i>(See screenshots above from Excel sheets 'Leads' & 'Industries')</i>
 <li><strong>Topleads:</strong><br>
-Counts the compnaies in the top 3 lead categories, closest to a deal: 'Follow-up', 'Qualified Lead' & 'Contract'<br></li>
+Counts the compnaies in the top 3 lead categories: 'Follow-up', 'Qualified Lead' & 'Contract'<br></li>
 <li><strong>Leads by industries:</strong><br>
-Counts the industries and the different lead status in them and ho many companies in each industry belong to each lead status respectively.<br></li>
+Counts the industries and each respective indiv. lead status counts.<br></li>
+<img width='300' alt='Hubspool_Excel_Topleads' src='https://user-images.githubusercontent.com/86114549/148038422-dee8371a-2c21-4bf4-a7ed-01e2a82c6f47.png'><br>
 <li><strong>Pitches:</strong><br>
 Prints a table of each company that has a pitch scheduled and the data within the pitch information entry.<br></li>
 </ul>
@@ -130,23 +127,10 @@ Should you import data from a different tool, read below for the requirements.<b
 <br>
 However, some functions can perform additional analyses through changes to the HubSpot data structure / setup.<br>
 The function 'Counts' automatically gets every industry and lead status from HubSpot and counts their occurrence.<br>
-Additionally, with the following lead status & industry categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
+Additionally, with the following lead status categories configured in HubSpot, the function puts out a custom sorted table that can be exported:<br>
 <br>
-<strong>(If you use different categories, they will still be analyzed, but sorted by size and not custom sorted as shown below)</strong><br>
+<strong>(If you use different lead categories, they will still be analyzed, but sorted by size and not custom sorted as shown below)</strong><br>
 
-<br>
-<strong>Industries:</strong>
-<ul>
-  <li>Insurance</li>
-  <li>Financial Services</li>
-  <li>Mobility</li>
-  <li>Health</li>
-  <li>Telecommunications</li>
-  <li>eCommerce</li>
-  <li>Online Broker</li>
-  <li>Education</li>
-  <li>Government</li>
-</ul>
 <br>
 <strong>Lead status:</strong>
 <ul>
@@ -171,31 +155,31 @@ For the function 'Pitches', a company information entry has to be set up in HubS
 (again, you are free to enter whatever you like here and the function still works, the output just might not be ideal without changes to the sort command)<br>
 <br>
 <strong>Rejection:</strong><br>
-If a company / contact person rejects Qundo's offer, the reason for the rejection must be entered under "Company Information" under "Reason for rejection / unsuitability".<br>
-
-<strong>Reference contacts:</strong><br>
-Reference contacts are created as contacts under the respective company.<br>
-The lead status "Reference" is then selected under the respective contact.<br>
-<br>
+If a company / contact person rejects your offer, the reason for the rejection must be entered under "Company Information" under "Reason for rejection / unsuitability"<br>
+within HubSpot. This category has to be manually added to the HubSpot database default configuration.<br>
+This sheet is only generated using the function button 'ALL'.<br>
 
 <h2>FAQ:</h2><br>
 Regarding questions or other inquiries message me at:<br>
 <br>
-<strong>criomby@pm.me</strong><br>
+<strong>philippebraum@pm.me</strong><br>
 <br>
 <br>
-<ul><li><strong>What are the empty cells in the sheet 'Leads+Industries' below 'Industry'?</strong><br></li></ul>
-Those cells are industries in your data that are not included in the predefined categories above.<br>
-To see those industry names, go to the sheet 'Industries_raw' and they will be shown there.<br>
-<br>
-<ul><li><strong>Data import requirements for files not from HubSpot:</strong><br></ul></li>
+<ul><li><strong>Data import requirements for database files:</strong><br></ul></li>
 The imported data has to be in the .csv file format.<br>
+When exporting the database file from from HubSpot select the following options:<br>
+<br>
+<img width="293" alt="Screenshot 2022-01-04 103955" src="https://user-images.githubusercontent.com/86114549/148040649-c8fdf626-d23f-46d6-951c-bba83a0b6f6d.png">
+<br>
+<img width='450' alt='HubSpot_export_view_settings' src='https://user-images.githubusercontent.com/86114549/148040296-97d8de17-5f73-4bcc-b23b-4eccf7dc8671.png'>
+<br>
+<i>For files not from HubSpot:</i><br>
 The file has to contain the following columns:<br>
 Name (of the company), Lead Status, Create Date, Industry, Company owner (internally responsible person), Pitch, Reason for rejection / unsuitability.<br>
 <br>
-<ul><li><strong>I have an Apple computer:</strong><br></ul></li>
+<ul><li><strong>I have an Apple computer, can I use the ready-to-use release, too?</strong><br></ul></li>
 The ready-to-use-version is Windows only atm.<br>
-To run the program on MacOS, download the two scripts and run them in your IDE or local Python distribution or compile them yourself.<br>
+To run the program on MacOS, download the two scripts and run them in your local Python distribution, IDE or compile them yourself.<br>
 <br>
 <ul><li><strong>Windows Defender doesn't let me run the program:</strong><br></ul></li>
 MS Windows' built-in antivirus Windows Defender automatically blocks any kind of unknown programs by default.<br>
@@ -212,8 +196,8 @@ To run the program, follow the process below:<br>
 <img src="https://user-images.githubusercontent.com/86114549/141657566-c661a1bd-5918-43c5-b8e3-3b61f14e79e0.png" alt="defender_more_details"></a>
 
 <br>
-<ul><li><strong>Dependencies:</strong><br></ul></li>
-xlsxwriter, pandas<br>
+<ul><li><strong>Dependencies?</strong><br></ul></li>
+See requirements.txt.<br>
 <br>
 
 <h2>Support the project:</h2><br>
