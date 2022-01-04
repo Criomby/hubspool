@@ -24,13 +24,14 @@ class App(tk.Tk):
         self.iconbitmap(resource_path('icon_in.ico'))
         self.geometry('660x700')
         self.resizable(False, True)
+        self.configure(background='white')
 
         # basic layout
         frame_0 = tk.Frame()
         frame_0.pack()
-        frame_a = tk.Frame()
+        frame_a = tk.Frame(background='white')
         frame_a.pack()
-        frame_buttons1 = tk.Frame()
+        frame_buttons1 = tk.Frame(background='white')
         frame_buttons1.pack()
         frame_c = tk.Frame()
         frame_c.pack()
@@ -40,16 +41,15 @@ class App(tk.Tk):
         self.logo = 'logo_gui.jpg'
         self.logo_open = Image.open(resource_path(self.logo))
         self.img_logo = ImageTk.PhotoImage(self.logo_open)
-        self.label_logo = tk.Label(image=self.img_logo, master=frame_a)
+        self.label_logo = tk.Label(image=self.img_logo, master=frame_a, background='white')
         # define labels
-        label_space2 = tk.Label(text='', width=30, height=1, master=frame_c)
-        label_space3 = tk.Label(text='', width=30, height=0, master=frame_a)
+        label_space2 = tk.Label(text='', width=30, height=1, master=frame_c, background='white')
         label4 = tk.Label(
             text='Copyright 2022 Braum                                                                             ',
-            width=50, height=1, master=frame_0)
+            width=50, height=1, master=frame_0, background='white', fg='grey50')
         label5 = tk.Label(
-            text='                                                                             Version: 2.6.0',
-            width=50, height=1, master=frame_0)
+            text='                                                                            Version: 2.6.0',
+            width=50, height=1, master=frame_0, background='white', fg='grey50')
         # define textbox
         self.textbox = tk.Text(width=100, height=200, master=frame_d)
         # define buttons
@@ -78,7 +78,6 @@ class App(tk.Tk):
         label4.pack(side=tk.LEFT)
         label5.pack(side=tk.RIGHT)
         self.label_logo.pack()
-        label_space3.pack()
         # button grid layout
         button_open.grid(row=0, column=0, pady='10')
         button_safe.grid(row=0, column=1, pady='10')
