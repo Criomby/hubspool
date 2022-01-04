@@ -64,7 +64,7 @@ Saves the last printed function which is seen in the text box as Excel (.xlsx) f
 <li><strong>Delete:</strong><br>
 Deletes all output within the text box.<br></li>
 <br>
-_________________________________________________________________________________________________________________________<br>
+<br>
 <br>
 <li><strong>ALL:</strong><br>
 All metrics are taken and exported into one Excel file within different sheets, each named accordingly.<br>
@@ -103,7 +103,7 @@ The created Excel also contains charts of the data for the sheets 'Leads' & 'Ind
 <br>
 <br>
 (Only function 'ALL' creates charts).<br>
-_________________________________________________________________________________________________________________________<br>
+<br>
 <br>
 <li><strong>Print all:</strong><br>
 Prints out the first 5 top and bottom rows, to see if the file contains the latest information.<br</li>
